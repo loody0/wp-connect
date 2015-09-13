@@ -10,3 +10,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: connect
 Tags: buddypress
 */
+
+@import "mixins/mixins";
+@import "variables/colors";
+
+@import "normalize";
+
+@import "components/components";
+
+@import "layout/layout";
+
+@import "site/site";

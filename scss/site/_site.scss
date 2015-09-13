@@ -1,0 +1,22 @@
+body{
+    background-color: $color_body-background;
+    font-family: 'Open Sans', sans-serif;
+    color: $color_text;
+}
+
+.page-wrap{
+    position: relative;
+    background-color: $color_body-background;
+}
+a{
+    color: $color_link-main;
+    &:hover, &:focus, &:active{
+        color: $color_link-main-hover;
+        text-decoration: none;
+    }
+}
+
+@import "wp-core";
+@import "header";
+@import "content";
+@import "sidebar";

@@ -1,0 +1,210 @@
+.site-navbar{
+    @media(min-width: 1560px){
+        .site-navbar-search{
+            padding-left: 30px;
+            padding-right: 50px;
+        }
+    }
+    .site-menu-bar{
+        display: none;
+        font-size: 24px;
+        line-height: 26px;
+        margin-top: 26px;
+        margin-bottom: 26px;
+        >span{
+            cursor: pointer;
+            color: $color_link-main;
+            &:hover, &:focus, &:active{
+                color: $color_link-main-hover;
+            }
+        }
+    }
+}
+body.side-opened{
+    overflow-x: hidden;
+    .page-wrap{
+        /*position: fixed;*/
+        overflow-x: hidden;
+        
+    }
+}
+.page-wrap{
+    @include transition(transform 0.3s);
+    position: relative;
+    .page-overlay{
+        opacity: 0;
+        z-index: -1;
+        &.active{
+            position: absolute;
+            background-color: #000;
+            opacity: 0.1;
+            top: -78px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1040;
+        }
+    }
+    &.open-left{
+        @include transform(translateX(70%));
+        @media(min-width: 420px){
+            @include transform(translateX(300px));
+        }
+    }
+    &.open-right{
+        @include transform(translateX(-70%));
+        @media(min-width: 420px){
+            @include transform(translateX(-300px));
+        }
+    }
+}
+.site-header{
+    &.header-resp-1{
+        .navbar-user{
+            .user-name{
+                display: none;
+            }
+            >.user-dropdown{
+                .dropdown-menu:after{
+                    left: auto;
+                    right: 50px;
+                }
+            }
+        }
+    }
+    &.header-resp-2{
+        .site-menu-bar{
+            display: block;
+        }
+        .site-menu{
+            display: none;
+        }
+    }
+}
+
+.side-menu-wrap{
+    position: fixed;
+    background-color: $color_side-bg;
+    top: 0;
+    bottom: 0;
+    left: -300px;
+    width: 300px;
+    max-width: 70%;
+    height: 100%;
+    height: 100vh;
+    border-right: solid 1px $color_line;
+    border-bottom: solid 1px $color_line;
+    padding: 20px;
+    overflow-y: auto;
+    @include transition(all 0.3s);
+    &.open{
+        left: 0;
+    }
+}
+.side-menu-wrap, .side-left{
+    ul.side-menu{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        margin-left: -20px;
+        margin-right: -20px;
+        margin-bottom: 15px;
+        >li{
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            >a{
+                display: block;
+                padding: 10px 20px;
+                color: #DDD;
+                color: rgba(255,255,255,0.7);
+                &:hover, &:active, &:focus{
+                    background-color: rgba(0,0,0,0.2);
+                }
+            }
+            &.active{
+                >a{
+
+                }
+            }
+        }
+    }
+}
+
+/*
+ 768px
+*/
+/*
+ header height
+*/
+.site-header .site-navbar{
+    @media(max-width: 767px){
+        min-height: 50px;
+    }
+    .navbar-header{
+        @media(max-width: 767px){
+            text-align: center;
+            padding: 0 20px;
+            .navbar-brand{
+                float: none;
+                height: 50px;
+                line-height: 50px;
+                .site-logo{
+                    display: inline;
+                    padding: 0 15px;
+                    img{
+                        height: 30px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+/*
+ menu toggle
+*/
+.site-navbar{
+    .side-left-bar,
+    .side-right-bar{
+        display: none;
+        color: $color_link-main;
+        line-height: 30px;
+        font-size: 20px;
+        margin: 10px 15px 0 15px;
+        @media(max-width: 767px){
+            display: inline;
+        }
+        .badge{
+            padding: 2px 4px;
+            top: -4px;
+            right: -8px;
+        }
+    }
+}
+
+.side-left{
+    position: fixed;
+    background-color: $color_side-bg;
+    top: 0;
+    bottom: 0;
+    color: #FFF;
+    height: 100vh;
+    border-right: solid 1px $color_line;
+    border-bottom: solid 1px $color_line;
+    overflow-y: auto;
+    overflow-x: hidden;
+    @include transition(all 0.3s);
+    width: 70%;
+    left: -70%;
+    @media(min-width: 420px){
+        left: -300px;
+        width: 300px;
+    }
+    &.open{
+        left: 0;
+    }
+    ul.side-menu{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

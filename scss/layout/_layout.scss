@@ -1,0 +1,33 @@
+@import "columns";
+@import "responsive";
+
+.site-main{
+    padding: 25px 0;
+    @media(min-width: 998px){
+        padding: 25px 10px;
+    }
+}
+.site-sidebar{
+    .sidebar-2{
+        margin-top: -25px;
+        padding-top: 25px;
+        margin-left: -10px;
+        margin-right: -25px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: #FFF;
+        min-height: 100vh;
+        @media(max-width: 767px){
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 1580px) {
+    .col-main{
+        width: 60%;
+    }
+    .col-side{
+        width: 40%;
+    }
+}

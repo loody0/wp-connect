@@ -1,0 +1,109 @@
+.page-wrap.navbar-fixed{
+    padding-top: 0;
+    @media(min-width: 768px){
+        padding-top: 80px;
+    }
+}
+.site-navbar{
+    background-color: #FFF;
+    min-height: 78px;
+    border: none;
+    border-bottom: solid 1px $color_line;
+    margin-bottom: 0;
+    @include border-radius(0);
+    @include box-shadow(none);
+    .navbar-brand{
+        height: 78px;
+        .site-logo{
+            padding-top: 5px;
+            padding-bottom: 5px;
+            img{
+                height: 38px;
+                width: auto;
+                max-width: 100%;
+            }
+        }
+        .site-title-container{
+            .site-title{
+                color: $color_text-dark;
+                font-weight: 600;
+                font-size: 38px;
+                line-height: 48px;
+            }
+            &.has-description{
+                .site-title{
+                    font-size: 30px;
+                    line-height: 32px;
+                    margin-bottom: 3px;
+                }
+            }
+            .site-description{
+                font-size: 13px;
+                line-height: 13px;
+            }
+        }
+    }
+    .site-navbar-search{
+        margin-top: 22px;
+        .input-group{
+            .form-control{
+                border-right-color: transparent;
+                @include border-radius(15px 0 0 15px);
+                @include box-shadow(none);
+                &:focus{
+                    border-color: $color_input-border;
+                    border-right-color: transparent;
+                    outline-style: none;
+                }
+            }
+            .input-group-btn .btn{
+                border-color: $color_input-border;
+                border-left-color: transparent;
+                background: #FFF;
+                @include border-radius(0 15px 15px 0);
+                @include box-shadow(none);
+                &:hover, &:active, &:focus{
+                    border-color: $color_input-border;
+                    border-left-color: transparent;
+                    @include box-shadow(none);
+                    outline-style: none;
+                }
+            }
+        }
+    }
+    .navbar-nav{
+        >li{
+            >a{
+                color: $color_nav-link;
+                font-weight: 600;
+                @include box-shadow(none);
+                background: transparent;
+                @media (min-width: 768px){
+                    padding-top: 29px;
+                    padding-bottom: 29px;
+                }
+                &:hover, &:focus{
+                    color: $color_nav-link;
+                    background: transparent;
+                }
+            }
+        }
+        >.active>a, >.active>a:focus, >.active>a:hover{
+            color: $color_nav-link;
+            @include box-shadow(none);
+            background: transparent;
+        }
+    }
+    .site-menu{
+        >li{
+            >a{
+                padding-left: 10px;
+                padding-right: 10px;
+                @media (min-width: 1580px) {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+        }
+    }
+}

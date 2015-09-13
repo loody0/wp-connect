@@ -1,0 +1,35 @@
+.connect-input{
+    border-color: $color_input-border;
+    color: $color_text;
+}
+.connect-btn{
+    font-weight: 600;
+    @include transition(all 0.3s);
+}
+.connect-btn-default{
+    color: $color_btn-default-text;
+    border-color: $color_btn-default-border;
+    &:hover, &:focus, &:active{
+        color: $color_btn-default-text;
+        background-color: $color_btn-default-bg-hover;
+        border-color: $color_btn-default-border;
+    }
+
+}
+.connect-btn-primary{
+    background: $color_btn-primary-bg;
+    border-color: $color_btn-primary-bg;
+    &:hover, &:focus, &:active{
+        background: $color_btn-primary-bg-hover;
+        border-color: $color_btn-primary-bg-hover;
+    }
+}
+
+.connect-paging{
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    .btn-group{
+        margin-left: 20px;
+    }
+}

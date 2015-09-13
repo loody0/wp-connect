@@ -1,0 +1,100 @@
+@mixin border-radius($b){
+    -webkit-border-radius: $b;
+    -moz-border-radius: $b;
+    border-radius: $b;
+}
+@mixin box-shadow($b){
+    -webkit-box-shadow: $b;
+    -moz-box-shadow: $b;
+    box-shadow: $b;
+}
+@mixin background-gradient($g){
+    background: -webkit-$g;
+    background: -moz-$g;
+    background: -o-$g;
+    background: $g;
+}
+@mixin transform($t){
+    -webkit-transform: $t;
+    -moz-transform: $t;
+    -o-transform: $t;
+    transform: $t;
+}
+@mixin transition($t){
+    -webkit-transition: $t;
+    -moz-transition: $t;
+    -o-transition: $t;
+    transition: $t;
+}
+@mixin material-shadow($level:1){
+
+    @if $level == 1 {
+        @include box-shadow((0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)));
+    }
+    @else if $level == 2 {
+        @include box-shadow((0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)));
+    }
+    @else if $level == 3 {
+        @include box-shadow((0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)));
+    }
+    @else if $level == 4 {
+        @include box-shadow((0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)));
+    }
+    @else if $level == 5 {
+        @include box-shadow((0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)));
+    }
+
+}
+@mixin absolute-center(){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@mixin center(){
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@mixin glyphicon() {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin placeholder_color($c){
+
+    &::-webkit-input-placeholder {
+        color: $c;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        color: $c;  
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+        color: $c;  
+    }
+
+    &:-ms-input-placeholder {  
+        color: $c;  
+    }
+
+}
+
+@mixin fa(){
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
