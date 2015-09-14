@@ -762,7 +762,7 @@ body.side-opened .page-wrap {
 }
 body {
   background-color: #f7f7f7;
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
   color: #7c7a7a;
 }
 

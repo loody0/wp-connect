@@ -18,34 +18,37 @@ $args = array(
     'page_title' => __( 'Theme Options', 'connect' ),
     'admin_bar' => true,
     'customizer' => true,
-    'customizer_only' => true,
+//    'customizer_only' => true,
     'dev_mode' => false,
+    'async_typography' => true,
 );
 
 Redux::setArgs( $opt_name, $args );
 
-$section = array(
-    'title' => __( 'General', 'connect' ),
-    'id' => 'con-tab-general',
-    'desc' => '',
-//    'icon'   => 'el el-home',
-    'fields' => array(
-        array(
-            'id' => 'opt-text-example',
-            'type' => 'text',
-            'title' => 'Text Field',
-            'subtitle' => 'Subtitle',
-            'desc' => 'Field Description',
-            'default' => 'Default Text',
-        ),
-    )
-);
-Redux::setSection( $opt_name, $section );
-
+//  general section
+//$section = array(
+//    'title' => __( 'General', 'connect' ),
+//    'id' => 'con-tab-general',
+//    'desc' => '',
+////    'icon'   => 'el el-home',
+//    'fields' => array(
+//        array(
+//            'id' => 'opt-text-example',
+//            'type' => 'text',
+//            'title' => 'Text Field',
+//            'subtitle' => 'Subtitle',
+//            'desc' => 'Field Description',
+//            'default' => 'Default Text',
+//        ),
+//    )
+//);
+//Redux::setSection( $opt_name, $section );
+//  header section
 $section = array(
     'title' => __( 'Header', 'connect' ),
     'id' => 'con-tab-header',
     'desc' => '',
+    'icon' => 'el el-home',
     'fields' => array(
         array(
             'subtitle' => __( 'Upload a logo for your theme', 'connect' ),
@@ -59,6 +62,34 @@ $section = array(
             'id' => 'connect_disable_tagline',
             'type' => 'checkbox',
             'title' => __( 'Disable Blog Tagline', 'connect' ),
+        )
+    )
+);
+Redux::setSection( $opt_name, $section );
+
+// -> START Typography
+$section = array(
+    'title' => __( 'Typography', 'connect' ),
+    'id' => 'con-tab-typography',
+    'icon' => 'el el-font',
+    'fields' => array(
+        array(
+            'id' => 'connect-typography-body',
+            'type' => 'typography',
+            'title' => __( 'Body Font', 'connect' ),
+            'subtitle' => __( 'Specify the body font properties.', 'connect' ),
+            'google' => true,
+            'line-height' => false,
+            'font-weight' => false,
+            'font-size' => false,
+            'font-style' => false,
+            'color' => false,
+            'text-align' => false,
+            'subsets' => false,
+            'output' => array( 'body' ),
+            'default' => array(
+                'font-family' => "Open Sans",
+            )
         )
     )
 );
