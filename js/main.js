@@ -10,7 +10,6 @@
             responsiveSidebarActivity();
             responsivePostBox();
         } );
-        $( window ).resize();
 
         // post timeline
         $( "body" ).on( "click", ".post-footer-icon .icon-comment", function() {
@@ -60,7 +59,7 @@
             var _sw = window.innerWidth;
 
             var __siteNavbar = $( '#site-navbar' );
-            
+
             /*
              * navbar fixed only >768px
              */
@@ -71,7 +70,7 @@
                 __siteNavbar.addClass( 'navbar-fixed-top' );
                 __pageWrapper.addClass( 'fixed-navbar' );
             }
-            
+
             /*
              * site-menu responsive
              */
@@ -93,8 +92,8 @@
                     }
                 }
             }
-            
-            
+
+
             __body.off( "click", "#site-menu-bar" );
             __body.on( "click", "#site-menu-bar", function() {
                 __body.toggleClass( 'side-opened' );
@@ -223,6 +222,8 @@
         } );
         // end chat window
 
+        $( window ).resize();
+
     } );
 
     //    ajax page loader
@@ -277,7 +278,7 @@
                             var barWidth = 30;
                             bar.animate( {
                                 width: barWidth + '%'
-                            }, 200);
+                            }, 200 );
                         }
                     }, false );
                     return xhr;
@@ -296,10 +297,10 @@
                         document.title = $( data ).filter( 'title' ).text();
                         bar.animate( {
                             width: '100%'
-                        }, 200, function(){
+                        }, 200, function() {
                             bar.hide( 0 ).width( 0 );
                             overlay.fadeOut( 300 );
-                        });
+                        } );
                         $( window ).resize();
                         $( window ).load();
                     } )

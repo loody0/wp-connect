@@ -97,3 +97,4 @@ function connect_widgets_init() {
 add_action( 'widgets_init', 'connect_widgets_init' );
 
 get_template_part( 'inc/functions' );
+get_template_part( 'inc/custom-login' );
