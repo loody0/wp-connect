@@ -192,7 +192,7 @@
          */
         public function admin_menus() {
 
-            $page = 'add_management_page';
+             $page = 'add_management_page';
 
             // About Page
             $page(

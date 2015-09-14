@@ -888,6 +888,14 @@ a img.aligncenter {
   /* Above WP toolbar. */
 }
 
+.gallery-caption {
+  display: block;
+}
+
+.bypostauthor {
+  display: block;
+}
+
 .page-wrap.navbar-fixed {
   padding-top: 0;
 }

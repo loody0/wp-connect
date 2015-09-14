@@ -62,14 +62,14 @@ function connect_scripts() {
     // font awesome
     wp_enqueue_style( 'font-awesome', CONNECT_URI_LIB . '/font-awesome/css/font-awesome.min.css' );
 
-    wp_enqueue_script('modernizr', CONNECT_URI .'/js/modernizr.js', false, false, true);
-    wp_enqueue_script('wow', CONNECT_URI .'/js/wow.min.js', false, false, true);
-    
+    wp_enqueue_script( 'modernizr', CONNECT_URI . '/js/modernizr.js', false, false, true );
+    wp_enqueue_script( 'wow', CONNECT_URI . '/js/wow.min.js', false, false, true );
+
     // custom scroll
     wp_enqueue_style( 'custom-scrollbar-style', CONNECT_URI_LIB . '/malihu-custom-scrollbar/jquery.mCustomScrollbar.min.css' );
-    wp_enqueue_script('custom-scrollbar-js', CONNECT_URI_LIB .'/malihu-custom-scrollbar/jquery.mCustomScrollbar.concat.min.js', false, false, true);
-    
-    wp_enqueue_script('connect-script', CONNECT_URI .'/js/main.js', false, false, true);
+    wp_enqueue_script( 'custom-scrollbar-js', CONNECT_URI_LIB . '/malihu-custom-scrollbar/jquery.mCustomScrollbar.concat.min.js', false, false, true );
+
+    wp_enqueue_script( 'connect-script', CONNECT_URI . '/js/main.js', false, false, true );
     wp_enqueue_style( 'connect-style', get_stylesheet_uri() );
 
     if ( is_singular() ) wp_enqueue_script( "comment-reply" );
@@ -83,16 +83,17 @@ add_action( 'wp_enqueue_scripts', 'connect_scripts' );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function connect_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'connect' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+    register_sidebar( array(
+        'name' => esc_html__( 'Sidebar', 'connect' ),
+        'id' => 'sidebar-1',
+        'description' => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ) );
 }
+
 add_action( 'widgets_init', 'connect_widgets_init' );
 
-require CONNECT_DIR_INC . '/functions.php';
+get_template_part( 'inc/functions' );
