@@ -1,0 +1,258 @@
+#buddypress {
+  position: relative;
+}
+
+#buddypress .dir-search {
+  margin-bottom: 30px;
+}
+#buddypress .dir-search .input-group .form-control {
+  border-color: #d8dcde;
+  border-right-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: #7c7a7a;
+}
+#buddypress .dir-search .input-group .form-control:focus, #buddypress .dir-search .input-group .form-control:hover, #buddypress .dir-search .input-group .form-control:active {
+  border-color: #d8dcde;
+  border-right-color: transparent;
+  outline: none;
+}
+#buddypress .dir-search .input-group .input-group-btn .btn {
+  border-left-color: transparent;
+  border-color: #d8dcde;
+  color: #7c7a7a;
+}
+#buddypress .dir-search .input-group .input-group-btn .btn:hover, #buddypress .dir-search .input-group .input-group-btn .btn:active, #buddypress .dir-search .input-group .input-group-btn .btn:focus {
+  background-color: #FFF;
+  border-left-color: transparent;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+#buddypress .dir-search .input-group .input-group-btn .btn:after {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e003";
+}
+
+#buddypress div.connect-item-list-tabs {
+  margin-bottom: 20px;
+  line-height: 25px;
+}
+#buddypress div.connect-item-list-tabs ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 13px;
+  position: relative;
+}
+#buddypress div.connect-item-list-tabs ul:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 15px;
+  border-bottom: solid 1px #d8dcde;
+}
+#buddypress div.connect-item-list-tabs ul > li {
+  float: none;
+  border-bottom: solid 1px #d8dcde;
+  padding-bottom: 10px;
+  display: inline-block;
+  margin: 0 -2px;
+  margin-bottom: 15px;
+  line-height: 25px;
+}
+#buddypress div.connect-item-list-tabs ul > li > a, #buddypress div.connect-item-list-tabs ul > li > span {
+  padding: 0 15px;
+  display: inline-block;
+  color: #66757f;
+  font-weight: 600;
+  line-height: 25px;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#buddypress div.connect-item-list-tabs ul > li > a:hover, #buddypress div.connect-item-list-tabs ul > li > a:active, #buddypress div.connect-item-list-tabs ul > li > a:focus, #buddypress div.connect-item-list-tabs ul > li > span:hover, #buddypress div.connect-item-list-tabs ul > li > span:active, #buddypress div.connect-item-list-tabs ul > li > span:focus {
+  color: #ef4837;
+}
+#buddypress div.connect-item-list-tabs ul > li > a:after, #buddypress div.connect-item-list-tabs ul > li > span:after {
+  content: '';
+  position: absolute;
+  border-right: 1px solid #66757f;
+  height: 80%;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#buddypress div.connect-item-list-tabs ul > li:last-child a:after {
+  border-right: none;
+}
+#buddypress div.connect-item-list-tabs ul > li > a span {
+  border: solid 1px #d8dcde;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  padding: 3px 6px;
+  font-size: 70%;
+  vertical-align: middle;
+  text-align: center;
+}
+#buddypress div.connect-item-list-tabs ul > li.selected > a {
+  background-color: transparent;
+  color: #ef4837;
+  opacity: 1;
+  font-weight: 600;
+}
+#buddypress div.connect-item-list-tabs ul > li.selected > a:before {
+  content: '\e253';
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  top: auto;
+  bottom: -16px;
+  left: 45%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 16px;
+  color: #f7f7f7;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+  z-index: 5;
+}
+#buddypress div.connect-item-list-tabs ul > li.selected > a span {
+  border-color: #ef4837;
+}
+
+#buddypress div.item-list-tabs ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#buddypress .dir-form .connect-order-select-wrap {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  padding-left: 10px;
+  background-color: #f7f7f7;
+  margin-bottom: 15px;
+  text-align: right;
+}
+@media (max-width: 767px) {
+  #buddypress .dir-form .connect-order-select-wrap {
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+}
+#buddypress .dir-form .connect-order-select-wrap .connect-order-select {
+  width: auto;
+  max-width: 100%;
+  display: inline-block;
+}
+
+#buddypress .connect-pagination {
+  display: block;
+}
+#buddypress .connect-pagination .pagination-links label {
+  margin-right: 15px;
+}
+#buddypress .connect-pagination .pagination-links .page-numbers {
+  display: none;
+}
+#buddypress .connect-pagination .pagination-links .page-numbers:last-child {
+  margin-left: -1px;
+}
+#buddypress .connect-pagination .pagination-links .next, #buddypress .connect-pagination .pagination-links .prev {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #FFF;
+  color: #66757f;
+  border: solid 1px #d3d7da;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#buddypress .connect-pagination .pagination-links .next:before, #buddypress .connect-pagination .pagination-links .prev:before {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#buddypress .connect-pagination .pagination-links .next:hover, #buddypress .connect-pagination .pagination-links .next:focus, #buddypress .connect-pagination .pagination-links .next:active, #buddypress .connect-pagination .pagination-links .prev:hover, #buddypress .connect-pagination .pagination-links .prev:focus, #buddypress .connect-pagination .pagination-links .prev:active {
+  background-color: #e9ebed;
+}
+#buddypress .connect-pagination .pagination-links .next:before {
+  content: "\e258";
+}
+#buddypress .connect-pagination .pagination-links .prev:before {
+  content: "\e257";
+}
+
+#buddypress .dir-list.members ul.item-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#buddypress .dir-list.members ul.item-list li {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: solid 1px #d8dcde;
+}
+#buddypress .dir-list.members ul.item-list li .item-avatar {
+  margin-bottom: 10px;
+}
+#buddypress .dir-list.members ul.item-list li .item-avatar img {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#buddypress .dir-list.members ul.item-list li .item .item-name a {
+  font-size: 14px;
+  color: #66757f;
+  font-weight: 600;
+}
+#buddypress .dir-list.members ul.item-list li .item .item-name a:hover, #buddypress .dir-list.members ul.item-list li .item .item-name a:focus, #buddypress .dir-list.members ul.item-list li .item .item-name a:active {
+  color: #ef4837;
+}
+#buddypress .dir-list.members ul.item-list li .item .update {
+  font-size: 13px;
+}
+#buddypress .dir-list.members ul.item-list li .item .activity {
+  font-size: 12px;
+  color: #a1a1a1;
+}
+#buddypress .dir-list.members ul.item-list li .action a {
+  margin-top: 10px;
+}
+
+/*# sourceMappingURL=buddypress.css.map */

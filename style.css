@@ -252,8 +252,10 @@ th {
 .connect-btn-primary, .comments-area p.form-submit input.submit {
   background: #ef4837;
   border-color: #ef4837;
+  color: #FFF;
 }
 .connect-btn-primary:hover, .comments-area p.form-submit input.submit:hover, .connect-btn-primary:focus, .comments-area p.form-submit input.submit:focus, .connect-btn-primary:active, .comments-area p.form-submit input.submit:active {
+  color: #FFF;
   background: #bf392c;
   border-color: #bf392c;
 }

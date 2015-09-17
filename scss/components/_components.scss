@@ -19,7 +19,9 @@
 .connect-btn-primary{
     background: $color_btn-primary-bg;
     border-color: $color_btn-primary-bg;
+    color: #FFF;
     &:hover, &:focus, &:active{
+        color: #FFF;
         background: $color_btn-primary-bg-hover;
         border-color: $color_btn-primary-bg-hover;
     }

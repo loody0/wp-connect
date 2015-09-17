@@ -1,0 +1,197 @@
+// dir search
+#buddypress{
+    .dir-search{
+        margin-bottom: 30px;
+        .input-group{
+            .form-control{
+                border-color: $color_input-border;
+                border-right-color: transparent;
+                @include box-shadow(none);
+                color: $color_input-text;
+                &:focus, &:hover, &:active{
+                    border-color: $color_input-border;
+                    border-right-color: transparent;
+                    outline: none;
+                }
+            }
+            .input-group-btn .btn{
+                border-left-color: transparent;
+                border-color: $color_input-border;
+                color: $color_input-text;
+                &:hover, &:active, &:focus{
+                    background-color: #FFF;
+                    border-left-color: transparent;
+                    outline: none;
+                    @include box-shadow(none);
+                }
+                &:after{
+                    @include glyphicon;
+                    content: "\e003";
+                }
+            }
+        }
+    }
+}
+
+#buddypress{
+    div.connect-item-list-tabs{
+        margin-bottom: 20px;
+        line-height: 25px;
+        ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            font-size: 13px;
+            position: relative;
+            &:after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                left: 0;
+                bottom: 15px;
+                border-bottom: solid 1px $color_line;
+            }
+            >li{
+                float: none;
+                border-bottom: solid 1px $color_line;
+                padding-bottom: 10px;
+                display: inline-block;
+                margin: 0 -2px;
+                margin-bottom: 15px;
+                line-height: 25px;
+                >a, >span{
+                    padding: 0 15px;
+                    display: inline-block;
+                    color: $color_text-dark;
+                    font-weight: 600;
+                    line-height: 25px;
+                    position: relative;
+                    @include transition(all 0.3s);
+                    &:hover, &:active, &:focus{
+                        color: $color_link-main;
+                    }
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        border-right: 1px solid $color_text-dark;
+                        height: 80%;
+                        right: 0;
+                        top: 50%;
+                        @include transform(translateY(-50%));
+                    }
+                }
+                &:last-child{
+                    a:after{
+                        border-right: none;
+                    }
+                }
+                >a span{
+                    border: solid 1px $color_line;
+                    @include border-radius(50%);
+                    padding: 3px 6px;
+                    font-size: 70%;
+                    vertical-align: middle;
+                    text-align: center;
+                }
+                &.selected{
+                    >a{
+                        background-color: transparent;
+                        color: $color_link-main;
+                        opacity: 1;
+                        font-weight: 600;
+                        &:before{
+                            content: '\e253';
+                            @include glyphicon();
+                            position: absolute;
+                            top: auto;
+                            bottom: -16px;
+                            left: 45%;
+                            @include transform(translateX(-50%));
+                            font-size: 16px;
+                            color: $color_body-background;
+                            text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+                            z-index: 5;
+                        }
+                        span{
+                            border-color: $color_link-main;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#buddypress{
+    div.item-list-tabs{
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    }
+}
+#buddypress{
+    .dir-form{
+        .connect-order-select-wrap{
+            position: absolute;
+            top: 18px;
+            right: 0;
+            padding-left: 10px;
+            background-color: $color_body-background;
+            margin-bottom: 15px;
+            text-align: right;
+            @media(max-width: 767px){
+                position: relative;
+                top: auto;
+                right: auto;
+            }
+            .connect-order-select{
+                width: auto;
+                max-width: 100%;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+#buddypress{
+    .connect-pagination{
+        display: block;
+        .pagination-links{
+            label{
+                margin-right: 15px;
+            }
+            .page-numbers{
+                display: none;
+                &:last-child{
+                    margin-left: -1px;
+                }
+            }
+            .next, .prev{
+                display: inline-block;
+                padding: 6px 12px;
+                background-color: #FFF;
+                color: $color_text-dark;
+                border: solid 1px $color_btn-default-border;
+                @include transition(all 0.3s);
+                &:before{
+                    @include glyphicon();
+                }
+                &:hover, &:focus, &:active{
+                    background-color: $color_btn-default-bg-hover;
+                }
+            }
+            .next{
+                &:before{
+                    content: "\e258";
+                }
+            } 
+            .prev{
+                &:before{
+                    content: "\e257";   
+                }
+            }
+            
+        }
+    }
+}

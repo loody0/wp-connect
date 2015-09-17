@@ -1,0 +1,44 @@
+#buddypress{
+    .dir-list.members{
+        ul.item-list{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li{
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                border-bottom: solid 1px $color_line;
+                .item-avatar{
+                    margin-bottom: 10px;
+                    img{
+                        @include border-radius(5px);
+                    }
+                }
+                .item{
+                    .item-name{
+                        a{
+                            font-size: 14px;
+                            color: $color_text-dark;
+                            font-weight: 600;
+                            &:hover, &:focus, &:active{
+                                color: $color_link-main;
+                            }
+                        }
+                    }
+                    .update{
+                        font-size: 13px;
+                    }
+                    .activity{
+                        font-size: 12px;
+                        color: $color_text-grey;
+                    }
+                }
+                .action{
+                    a{
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

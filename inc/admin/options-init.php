@@ -79,6 +79,7 @@ $section = array(
             'title' => __( 'Body Font', 'connect' ),
             'subtitle' => __( 'Specify the body font properties.', 'connect' ),
             'google' => true,
+            'all_styles' => true,
             'line-height' => false,
             'font-weight' => false,
             'font-size' => false,

@@ -17,3 +17,5 @@ define( "CONNECT_URI_IMAGES", CONNECT_URI_MEDIA . '/images' );
 
 get_template_part( 'inc/basic' );
 get_template_part( 'inc/admin/admin-init' );
+
+get_template_part( 'inc/buddypress/functions' );

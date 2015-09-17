@@ -1,5 +1,7 @@
 <?php
 /**
+ * Functions - general functions 
+ * 
  * @package Connect
  */
 
