@@ -192,6 +192,8 @@
   background-color: #FFF;
   color: #66757f;
   border: solid 1px #d3d7da;
+  font-size: 0;
+  line-height: 13px;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -207,6 +209,8 @@
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  top: 3px;
+  font-size: 14px;
 }
 #buddypress .connect-pagination .pagination-links .next:hover, #buddypress .connect-pagination .pagination-links .next:focus, #buddypress .connect-pagination .pagination-links .next:active, #buddypress .connect-pagination .pagination-links .prev:hover, #buddypress .connect-pagination .pagination-links .prev:focus, #buddypress .connect-pagination .pagination-links .prev:active {
   background-color: #e9ebed;
@@ -216,6 +220,9 @@
 }
 #buddypress .connect-pagination .pagination-links .prev:before {
   content: "\e257";
+}
+#buddypress .connect-pagination .pag-count {
+  line-height: 35px;
 }
 
 #buddypress .dir-list.members ul.item-list {

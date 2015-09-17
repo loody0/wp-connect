@@ -43,47 +43,7 @@ function connect_member_pagination_link( $pag_links ) {
     $cur_page = $members_template->pag_page;
     $label = '<label>' . sprintf( __( 'Page %s of %d', 'connect' ), $cur_page, $total ) . '</label>';
 
-    $pag_args = array(
-        $members_template->pag_arg => '%#%',
-    );
-
-    if ( defined( 'DOING_AJAX' ) && true === ( bool ) DOING_AJAX ) {
-        $base = remove_query_arg( 's', wp_get_referer() );
-    } else {
-        $base = '';
-    }
-
-    if ( !empty( $_REQUEST[ 's' ] ) ) {
-        $search_terms = $_REQUEST[ 's' ];
-    } else {
-        $search_terms = false;
-    }
-    $add_args = array();
-
-    if ( !empty( $search_terms ) ) {
-        $add_args[ 's' ] = urlencode( $search_terms );
-    }
-
-    $pag_links = paginate_links( array(
-        'base' => add_query_arg( $pag_args, $base ),
-        'format' => '',
-        'total' => ceil( ( int ) $members_template->total_member_count / ( int ) $members_template->pag_num ),
-        'current' => ( int ) $members_template->pag_page,
-        'prev_text' => '',
-        'next_text' => '',
-        'mid_size' => 1,
-        'add_args' => $add_args,
-        'type' => 'array'
-        ) );
-    
-    $pag_links_e = '';
-    if(  is_array( $pag_links )){
-        foreach ( $pag_links as $pl ) {
-            $pag_links_e .= $pl;
-        }
-    }
-
-    return $label . $pag_links_e;
+    return $label . $pag_links;
 }
 
 add_filter( 'bp_get_members_pagination_links', 'connect_member_pagination_link' );

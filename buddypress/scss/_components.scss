@@ -173,9 +173,13 @@
                 background-color: #FFF;
                 color: $color_text-dark;
                 border: solid 1px $color_btn-default-border;
+                font-size: 0;
+                line-height: 13px;
                 @include transition(all 0.3s);
                 &:before{
                     @include glyphicon();
+                    top: 3px;
+                    font-size: 14px;
                 }
                 &:hover, &:focus, &:active{
                     background-color: $color_btn-default-bg-hover;
@@ -192,6 +196,10 @@
                 }
             }
             
+        } // .pagination-links
+        .pag-count{
+            line-height: 35px;
         }
-    }
+        
+    } // .connect pagination
 }
