@@ -233,6 +233,7 @@ th {
 
 .connect-btn, .comments-area p.form-submit input.submit {
   font-weight: 600;
+  font-size: 13px;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;

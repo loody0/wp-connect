@@ -28,7 +28,7 @@ add_filter( 'bp_directory_members_search_form', 'connect_bp_directory_members_se
 function connect_add_class_friend_button( $button ) {
 
     // id : pending, awaiting_response, is_friend, not_friends
-    $class = ' btn btn-default btn-sm connect-btn';
+    $class = ' btn btn-default connect-btn';
     switch ( $button[ 'id' ] ) {
         case 'is_friend': $class .= ' connect-btn-default';
             break;
@@ -88,7 +88,7 @@ add_filter( 'bp_get_group_description_excerpt', 'connect_bp_get_group_descriptio
 // add class to add group join button
 function connect_bp_group_join_button( $button ) {
     // id: join_group, leave_group, accept_invite, membership_requested, request_membership
-    $class = ' btn btn-default btn-sm connect-btn';
+    $class = ' btn btn-default connect-btn';
     switch ( $button[ 'id' ] ) {
         case 'membership_requested': $class .= ' connect-btn-default';
             break;
@@ -123,7 +123,7 @@ add_filter( 'bp_get_groups_pagination_links', 'connect_groups_pagination_link' )
 
 // add class to send public message button
 function connect_bp_send_message_button( $button ) {
-    $class = ' btn btn-default btn-sm connect-btn connect-btn-default';
+    $class = ' btn btn-default connect-btn connect-btn-default';
     $button[ 'link_class' ] = $button[ 'link_class' ] . $class;
     return $button;
 }
