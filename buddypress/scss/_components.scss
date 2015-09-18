@@ -58,7 +58,7 @@
                 display: inline-block;
                 margin: 0 -2px;
                 margin-bottom: 15px;
-                line-height: 25px;
+                line-height: 27px;
                 >a, >span{
                     padding: 0 15px;
                     display: inline-block;
@@ -191,6 +191,7 @@
                 }
             } 
             .prev{
+                margin-right: -4px;
                 &:before{
                     content: "\e257";   
                 }

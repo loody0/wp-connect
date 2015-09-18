@@ -93,11 +93,6 @@ do_action( 'bp_before_members_loop' );
                         </div>
                     </div>
                 </div>
-
-
-
-
-                <div class="clearfix"></div>
             </li>
 
         <?php endwhile; ?>

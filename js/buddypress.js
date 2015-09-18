@@ -808,7 +808,7 @@ jq( document ).ready( function() {
         if ( jq( this ).hasClass( 'no-ajax' ) ) {
             return;
         }
-
+        
         var target = jq( event.target ),
                 css_id, object, template;
 
@@ -824,10 +824,8 @@ jq( document ).ready( function() {
             }
 
             //bp_filter_request( object, jq.cookie('bp-' + object + '-filter'), jq.cookie('bp-' + object + '-scope') , 'div.' + object, target.parent().children('label').children('input').val(), 1, jq.cookie('bp-' + object + '-extras'), null, template );
-            /**
-             * connect
-             * change 4th parameter value
-             */
+            
+            //connect : change 4th parameter value
             bp_filter_request( object, jq.cookie( 'bp-' + object + '-filter' ), jq.cookie( 'bp-' + object + '-scope' ), 'div.' + object, target.parents( 'form' ).find( '.input-search' ).val(), 1, jq.cookie( 'bp-' + object + '-extras' ), null, template );
             return false;
         }
