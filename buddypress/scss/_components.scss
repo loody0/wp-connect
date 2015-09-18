@@ -64,7 +64,6 @@
                     display: inline-block;
                     color: $color_text-dark;
                     font-weight: 600;
-                    line-height: 25px;
                     position: relative;
                     @include transition(all 0.3s);
                     &:hover, &:active, &:focus{
@@ -92,6 +91,7 @@
                     font-size: 70%;
                     vertical-align: middle;
                     text-align: center;
+                    line-height: 24px;
                 }
                 &.selected{
                     >a{

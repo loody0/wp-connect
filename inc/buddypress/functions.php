@@ -120,3 +120,12 @@ function connect_groups_pagination_link( $pag_links ) {
 }
 
 add_filter( 'bp_get_groups_pagination_links', 'connect_groups_pagination_link' );
+
+// add class to send public message button
+function connect_bp_send_message_button( $button ) {
+    $class = ' btn btn-default btn-sm connect-btn connect-btn-default';
+    $button[ 'link_class' ] = $button[ 'link_class' ] . $class;
+    return $button;
+}
+add_filter( 'bp_get_send_public_message_button', 'connect_bp_send_message_button' );
+add_filter( 'bp_get_send_message_button_args', 'connect_bp_send_message_button' );

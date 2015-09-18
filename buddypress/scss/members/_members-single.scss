@@ -1,0 +1,64 @@
+.buddypress{
+    .bp_members{
+        .entry-header .entry-title{
+            display: none;
+        }
+    }
+}
+#buddypress{
+    #item-header{
+        margin-bottom: 20px;
+        #item-header-avatar{
+            padding-right: 30px;
+            display: table-cell;
+            vertical-align: top;
+            width: 150px;
+            img{
+                background-color: #FFF;
+                border: 1px solid #dbdadb;
+                @include border-radius(5px);
+                width: 150px;
+                height: auto;
+                max-width: 100%;
+                overflow: hidden;
+                margin-bottom: 15px;
+            }
+        }
+        #item-header-content{
+            display: table-cell;
+            vertical-align: top;
+            @media(max-width: 400px){
+                display: block;
+            }
+            h2.user-name{
+                font-size: 15px;
+                color: $color_link-main;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 5px;
+            }
+            h2.user-nicename{
+                font-weight: 700;
+                color: $color_text-dark;
+                font-size: 13px;
+                margin-top: 0;
+                margin-bottom: 5px;
+            }
+            .activity{
+                font-size: 12px;
+            }
+            #latest-update{
+                font-size: 13px;
+                margin: 10px 0;
+            }
+        }
+        #item-buttons{
+            .generic-button{
+                display: inline-block;
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+}

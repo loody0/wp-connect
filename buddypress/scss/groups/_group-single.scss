@@ -1,0 +1,43 @@
+.buddypress{
+    .bp_group{
+        .entry-header .entry-title{
+            display: none;
+        }
+    }
+}
+#buddypress{
+    #item-header{
+        #item-header-content{
+            .highlight{
+                font-weight: 700;
+                color: $color_text-dark;
+                font-size: 13px;
+                margin-top: 0;
+                margin-bottom: 5px;
+            }
+            p{
+                font-size: 13px;
+                margin: 10px 0;
+            }
+        }
+        h3{
+            margin: 10px 0 15px;
+            font-size: 14px;
+            font-weight: 700;
+            color: $color_text-dark;
+        }
+        #group-admins{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            li{
+                display: inline-block;
+                margin: 0 7px 7px 0;
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+}

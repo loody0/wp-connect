@@ -1,101 +1,97 @@
 <?php
-
 /**
  * BuddyPress - Users Header
  *
  * @package BuddyPress
  * @subpackage bp-legacy
  */
-
 ?>
 
 <?php
-
 /**
  * Fires before the display of a member's header.
  *
  * @since BuddyPress (1.2.0)
  */
-do_action( 'bp_before_member_header' ); ?>
+do_action( 'bp_before_member_header' );
+?>
 
 <div id="item-header-avatar">
-	<a href="<?php bp_displayed_user_link(); ?>">
+    <a href="<?php bp_displayed_user_link(); ?>">
 
-		<?php bp_displayed_user_avatar( 'type=full' ); ?>
+        <?php bp_displayed_user_avatar( 'type=full' ); ?>
 
-	</a>
+    </a>
 </div><!-- #item-header-avatar -->
 
 <div id="item-header-content">
+    <h2 class="user-name"><?php the_title(); ?></h2>
+    <?php if ( bp_is_active( 'activity' ) && bp_activity_do_mentions() ) : ?>
+        <h2 class="user-nicename">@<?php bp_displayed_user_mentionname(); ?></h2>
+    <?php endif; ?>
 
-	<?php if ( bp_is_active( 'activity' ) && bp_activity_do_mentions() ) : ?>
-		<h2 class="user-nicename">@<?php bp_displayed_user_mentionname(); ?></h2>
-	<?php endif; ?>
+    <span class="activity"><?php bp_last_activity( bp_displayed_user_id() ); ?></span>
 
-	<span class="activity"><?php bp_last_activity( bp_displayed_user_id() ); ?></span>
+    <?php
+    /**
+     * Fires before the display of the member's header meta.
+     *
+     * @since BuddyPress (1.2.0)
+     */
+    do_action( 'bp_before_member_header_meta' );
+    ?>
 
-	<?php
+    <div id="item-meta">
 
-	/**
-	 * Fires before the display of the member's header meta.
-	 *
-	 * @since BuddyPress (1.2.0)
-	 */
-	do_action( 'bp_before_member_header_meta' ); ?>
+        <?php if ( bp_is_active( 'activity' ) ) : ?>
 
-	<div id="item-meta">
+            <div id="latest-update">
 
-		<?php if ( bp_is_active( 'activity' ) ) : ?>
+                <?php bp_activity_latest_update( bp_displayed_user_id() ); ?>
 
-			<div id="latest-update">
+            </div>
 
-				<?php bp_activity_latest_update( bp_displayed_user_id() ); ?>
+        <?php endif; ?>
 
-			</div>
+        <div id="item-buttons">
 
-		<?php endif; ?>
+            <?php
+            /**
+             * Fires in the member header actions section.
+             *
+             * @since BuddyPress (1.2.6)
+             */
+            do_action( 'bp_member_header_actions' );
+            ?>
 
-		<div id="item-buttons">
+        </div><!-- #item-buttons -->
 
-			<?php
+        <?php
+        /**
+         * Fires after the group header actions section.
+         *
+         * If you'd like to show specific profile fields here use:
+         * bp_member_profile_data( 'field=About Me' ); -- Pass the name of the field
+         *
+         * @since BuddyPress (1.2.0)
+         */
+        do_action( 'bp_profile_header_meta' );
+        ?>
 
-			/**
-			 * Fires in the member header actions section.
-			 *
-			 * @since BuddyPress (1.2.6)
-			 */
-			do_action( 'bp_member_header_actions' ); ?>
-
-		</div><!-- #item-buttons -->
-
-		<?php
-
-		 /**
-		  * Fires after the group header actions section.
-		  *
-		  * If you'd like to show specific profile fields here use:
-		  * bp_member_profile_data( 'field=About Me' ); -- Pass the name of the field
-		  *
-		  * @since BuddyPress (1.2.0)
-		  */
-		 do_action( 'bp_profile_header_meta' );
-
-		 ?>
-
-	</div><!-- #item-meta -->
+    </div><!-- #item-meta -->
 
 </div><!-- #item-header-content -->
 
 <?php
-
 /**
  * Fires after the display of a member's header.
  *
  * @since BuddyPress (1.2.0)
  */
-do_action( 'bp_after_member_header' ); ?>
+do_action( 'bp_after_member_header' );
+?>
 
 <?php
-
 /** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */
-do_action( 'template_notices' ); ?>
+do_action( 'template_notices' );
+?>

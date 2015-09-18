@@ -1,99 +1,97 @@
 <div id="buddypress">
 
-	<?php
+    <?php
+    /**
+     * Fires before the display of member home content.
+     *
+     * @since BuddyPress (1.2.0)
+     */
+    do_action( 'bp_before_member_home_content' ); ?>
 
-	/**
-	 * Fires before the display of member home content.
-	 *
-	 * @since BuddyPress (1.2.0)
-	 */
-	do_action( 'bp_before_member_home_content' ); ?>
+    <div id="item-header" role="complementary">
 
-	<div id="item-header" role="complementary">
+        <?php bp_get_template_part( 'members/single/member-header' ) ?>
 
-		<?php bp_get_template_part( 'members/single/member-header' ) ?>
+    </div><!-- #item-header -->
 
-	</div><!-- #item-header -->
+    <div id="item-nav">
+        <div class="item-list-tabs connect-item-list-tabs no-ajax" id="object-nav" role="navigation">
+            <ul>
 
-	<div id="item-nav">
-		<div class="item-list-tabs no-ajax" id="object-nav" role="navigation">
-			<ul>
+                <?php bp_get_displayed_user_nav(); ?>
 
-				<?php bp_get_displayed_user_nav(); ?>
+                <?php
+                /**
+                 * Fires after the display of member options navigation.
+                 *
+                 * @since BuddyPress (1.2.4)
+                 */
+                do_action( 'bp_member_options_nav' ); ?>
 
-				<?php
+            </ul>
+        </div>
+    </div><!-- #item-nav -->
 
-				/**
-				 * Fires after the display of member options navigation.
-				 *
-				 * @since BuddyPress (1.2.4)
-				 */
-				do_action( 'bp_member_options_nav' ); ?>
+    <div id="item-body">
 
-			</ul>
-		</div>
-	</div><!-- #item-nav -->
+        <?php
+        /**
+         * Fires before the display of member body content.
+         *
+         * @since BuddyPress (1.2.0)
+         */
+        do_action( 'bp_before_member_body' );
 
-	<div id="item-body">
+        if ( bp_is_user_activity() || !bp_current_component() ) :
+            bp_get_template_part( 'members/single/activity' );
 
-		<?php
+        elseif ( bp_is_user_blogs() ) :
+            bp_get_template_part( 'members/single/blogs' );
 
-		/**
-		 * Fires before the display of member body content.
-		 *
-		 * @since BuddyPress (1.2.0)
-		 */
-		do_action( 'bp_before_member_body' );
+        elseif ( bp_is_user_friends() ) :
+            bp_get_template_part( 'members/single/friends' );
 
-		if ( bp_is_user_activity() || !bp_current_component() ) :
-			bp_get_template_part( 'members/single/activity' );
+        elseif ( bp_is_user_groups() ) :
+            bp_get_template_part( 'members/single/groups' );
 
-		elseif ( bp_is_user_blogs() ) :
-			bp_get_template_part( 'members/single/blogs'    );
+        elseif ( bp_is_user_messages() ) :
+            bp_get_template_part( 'members/single/messages' );
 
-		elseif ( bp_is_user_friends() ) :
-			bp_get_template_part( 'members/single/friends'  );
+        elseif ( bp_is_user_profile() ) :
+            bp_get_template_part( 'members/single/profile' );
 
-		elseif ( bp_is_user_groups() ) :
-			bp_get_template_part( 'members/single/groups'   );
+        elseif ( bp_is_user_forums() ) :
+            bp_get_template_part( 'members/single/forums' );
 
-		elseif ( bp_is_user_messages() ) :
-			bp_get_template_part( 'members/single/messages' );
+        elseif ( bp_is_user_notifications() ) :
+            bp_get_template_part( 'members/single/notifications' );
 
-		elseif ( bp_is_user_profile() ) :
-			bp_get_template_part( 'members/single/profile'  );
+        elseif ( bp_is_user_settings() ) :
+            bp_get_template_part( 'members/single/settings' );
 
-		elseif ( bp_is_user_forums() ) :
-			bp_get_template_part( 'members/single/forums'   );
+        // If nothing sticks, load a generic template
+        else :
+            bp_get_template_part( 'members/single/plugins' );
 
-		elseif ( bp_is_user_notifications() ) :
-			bp_get_template_part( 'members/single/notifications' );
+        endif;
 
-		elseif ( bp_is_user_settings() ) :
-			bp_get_template_part( 'members/single/settings' );
+        /**
+         * Fires after the display of member body content.
+         *
+         * @since BuddyPress (1.2.0)
+         */
+        do_action( 'bp_after_member_body' );
+        ?>
 
-		// If nothing sticks, load a generic template
-		else :
-			bp_get_template_part( 'members/single/plugins'  );
+    </div><!-- #item-body -->
 
-		endif;
-
-		/**
-		 * Fires after the display of member body content.
-		 *
-		 * @since BuddyPress (1.2.0)
-		 */
-		do_action( 'bp_after_member_body' ); ?>
-
-	</div><!-- #item-body -->
-
-	<?php
-
-	/**
-	 * Fires after the display of member home content.
-	 *
-	 * @since BuddyPress (1.2.0)
-	 */
-	do_action( 'bp_after_member_home_content' ); ?>
+    <?php
+    /**
+     * Fires after the display of member home content.
+     *
+     * @since BuddyPress (1.2.0)
+     */
+    do_action( 'bp_after_member_home_content' );
+    ?>
 
 </div><!-- #buddypress -->

@@ -77,7 +77,6 @@
   display: inline-block;
   color: #66757f;
   font-weight: 600;
-  line-height: 25px;
   position: relative;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -111,6 +110,7 @@
   font-size: 70%;
   vertical-align: middle;
   text-align: center;
+  line-height: 24px;
 }
 #buddypress div.connect-item-list-tabs ul > li.selected > a {
   background-color: transparent;
@@ -265,6 +265,67 @@
   margin-top: 10px;
 }
 
+.buddypress .bp_members .entry-header .entry-title {
+  display: none;
+}
+
+#buddypress #item-header {
+  margin-bottom: 20px;
+}
+#buddypress #item-header #item-header-avatar {
+  padding-right: 30px;
+  display: table-cell;
+  vertical-align: top;
+  width: 150px;
+}
+#buddypress #item-header #item-header-avatar img {
+  background-color: #FFF;
+  border: 1px solid #dbdadb;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width: 150px;
+  height: auto;
+  max-width: 100%;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+#buddypress #item-header #item-header-content {
+  display: table-cell;
+  vertical-align: top;
+}
+@media (max-width: 400px) {
+  #buddypress #item-header #item-header-content {
+    display: block;
+  }
+}
+#buddypress #item-header #item-header-content h2.user-name {
+  font-size: 15px;
+  color: #ef4837;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+#buddypress #item-header #item-header-content h2.user-nicename {
+  font-weight: 700;
+  color: #66757f;
+  font-size: 13px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+#buddypress #item-header #item-header-content .activity {
+  font-size: 12px;
+}
+#buddypress #item-header #item-header-content #latest-update {
+  font-size: 13px;
+  margin: 10px 0;
+}
+#buddypress #item-header #item-buttons .generic-button {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
 #buddypress .dir-list.groups .item-list {
   padding: 0;
   list-style: none;
@@ -316,6 +377,41 @@
 }
 #buddypress .dir-list.groups .action .group-button {
   float: right;
+}
+
+.buddypress .bp_group .entry-header .entry-title {
+  display: none;
+}
+
+#buddypress #item-header #item-header-content .highlight {
+  font-weight: 700;
+  color: #66757f;
+  font-size: 13px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+#buddypress #item-header #item-header-content p {
+  font-size: 13px;
+  margin: 10px 0;
+}
+#buddypress #item-header h3 {
+  margin: 10px 0 15px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #66757f;
+}
+#buddypress #item-header #group-admins {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#buddypress #item-header #group-admins li {
+  display: inline-block;
+  margin: 0 7px 7px 0;
+}
+#buddypress #item-header #group-admins li img {
+  width: 40px;
+  height: 40px;
 }
 
 /*# sourceMappingURL=buddypress.css.map */
