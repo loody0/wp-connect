@@ -1,4 +1,5 @@
 <?php
+
 /**
  * buddypress functions
  * 
@@ -28,12 +29,31 @@ function connect_add_class_friend_button( $button ) {
 
     // pending, awaiting_response, is_friend, not_friends
     // $button['id'];
-
-    $button[ 'link_class' ] = $button[ 'link_class' ] . ' btn btn-default btn-sm connect-btn connect-btn-primary';
+    $class = ' btn btn-default btn-sm connect-btn';
+    echo $button[ 'id' ];
+    switch ( $button[ 'id' ] ) {
+        case 'is_friend': $class .= ' connect-btn-default';
+            break;
+        case 'pending': $class .= ' connect-btn-default';
+            break;
+        case 'not_friends': $class .= ' connect-btn-primary';
+            break;
+        case 'awaiting_response': $class .= ' connect-btn-primary';
+            break;
+        default: break;
+    }
+    $button[ 'link_class' ] = $button[ 'link_class' ] . $class;
     return $button;
 }
 
 add_filter( 'bp_get_add_friend_button', 'connect_add_class_friend_button' );
+
+function connect_bp_get_button( $contents, $args, $button ) {
+    
+    return $contents;
+}
+
+add_filter( 'bp_get_button', 'connect_bp_get_button', 20, 3 );
 
 // custom display member pagination link
 function connect_member_pagination_link( $pag_links ) {

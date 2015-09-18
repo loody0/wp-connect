@@ -1243,16 +1243,20 @@ jq( document ).ready( function() {
                             parentdiv.removeClass( 'loading' );
                             parentdiv.addClass( 'pending_friend' );
                             parentdiv.fadeIn( 200 ).html( response );
+                            // connect : add classes to a :  btn btn-default connect-btn connect-btn-default
+                            parentdiv.children('a').addClass('btn btn-default connect-btn connect-btn-default');
                         }
                 );
 
             } else if ( action === 'remove' ) {
                 jq( parentdiv ).fadeOut( 200,
-                        function() {
+                        function() { 
                             parentdiv.removeClass( 'remove_friend' );
                             parentdiv.removeClass( 'loading' );
                             parentdiv.addClass( 'add' );
                             parentdiv.fadeIn( 200 ).html( response );
+                            // connect : add classes to a :  btn btn-default connect-btn connect-btn-primary
+                            parentdiv.children('a').addClass('btn btn-default connect-btn connect-btn-primary');
                         }
                 );
             }
