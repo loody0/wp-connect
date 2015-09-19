@@ -54,7 +54,7 @@ class Connect_Custom_Login {
             }
         }
         $attributes[ 'errors' ] = $errors;
-        
+
         // Check if user just logged out
         $attributes[ 'logged_out' ] = isset( $_REQUEST[ 'logged_out' ] ) && $_REQUEST[ 'logged_out' ] == true;
 
@@ -151,14 +151,10 @@ class Connect_Custom_Login {
                 return __( 'You need to enter a password to login.', 'connect' );
 
             case 'invalid_username':
-                return __(
-                    "We don't have any users with that email address.", 'connect'
-                );
+                return __( "We don't have any users with that email address.", 'connect' );
 
             case 'incorrect_password':
-                $err = __(
-                    "The password you entered wasn't quite right. <a href='%s'>Did you forget your password</a>?", 'connect'
-                );
+                $err = __( "The password you entered wasn't quite right. <a href='%s'>Did you forget your password</a>?", 'connect' );
                 return sprintf( $err, wp_lostpassword_url() );
 
             default:

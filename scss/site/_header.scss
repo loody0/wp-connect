@@ -60,6 +60,7 @@
                 border-color: $color_input-border;
                 border-left-color: transparent;
                 background: #FFF;
+                font-size: 14px;
                 @include border-radius(0 15px 15px 0);
                 @include box-shadow(none);
                 &:hover, &:active, &:focus{

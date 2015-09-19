@@ -64,7 +64,7 @@
         require_once dirname( __FILE__ ) . '/inc/themecheck/class.redux_themecheck.php';
 
         // Welcome
-        require_once dirname( __FILE__ ) . '/inc/welcome/welcome.php';
+        // require_once dirname( __FILE__ ) . '/inc/welcome/welcome.php'; // remove welcome page for embeded version
 
         /**
          * Main ReduxFramework class
@@ -1379,10 +1379,10 @@
                     // Add the submenu if it's permitted.
                     if ( true == $addMenu ) {
                         // ONLY for non-wp.org themes OR plugins. Theme-Check alert shown if used and IS theme.
-                        $this->page = call_user_func( 'add_submenu_page', $page_parent, $page_title, $menu_title, $page_permissions, $page_slug, array(
-                            &$this,
-                            'generate_panel'
-                        ) );
+                        // $this->page = call_user_func( 'add_submenu_page', $page_parent, $page_title, $menu_title, $page_permissions, $page_slug, array(
+                        //     &$this,
+                        //     'generate_panel'
+                        // ) );
                     }
                 }
             }
@@ -1405,11 +1405,11 @@
                     );
                 } else {
                     // Theme-Check notice is displayed for WP.org theme devs, informing them to NOT use this.
-                    $this->page = call_user_func( 'add_menu_page', $this->args['page_title'], $this->args['menu_title'], $this->args['page_permissions'], $this->args['page_slug'], array(
-                        &$this,
-                        'generate_panel'
-                    ), $this->args['menu_icon'], $this->args['page_priority']
-                    );
+                    // $this->page = call_user_func( 'add_menu_page', $this->args['page_title'], $this->args['menu_title'], $this->args['page_permissions'], $this->args['page_slug'], array(
+                    //     &$this,
+                    //     'generate_panel'
+                    // ), $this->args['menu_icon'], $this->args['page_priority']
+                    // );
 
                     if ( true === $this->args['allow_sub_menu'] ) {
                         if ( ! isset ( $section['type'] ) || $section['type'] != 'divide' ) {
@@ -1437,9 +1437,9 @@
                                 }
 
                                 // ONLY for non-wp.org themes OR plugins. Theme-Check alert shown if used and IS theme.
-                                call_user_func( 'add_submenu_page', $this->args['page_slug'], $section['title'], $section['title'], $this->args['page_permissions'], $this->args['page_slug'] . '&tab=' . $k,
-                                    //create_function( '$a', "return null;" )
-                                    '__return_null' );
+                                // call_user_func( 'add_submenu_page', $this->args['page_slug'], $section['title'], $section['title'], $this->args['page_permissions'], $this->args['page_slug'] . '&tab=' . $k,
+                                //     //create_function( '$a', "return null;" )
+                                //     '__return_null' );
                             }
 
                             // Remove parent submenu item instead of adding null item.
@@ -2759,19 +2759,19 @@
                         'status' => __( 'Invalid security credential.  Please reload the page and try again.', 'redux-framework' ),
                         'action' => ''
                     ) );
-                    
+
                     die();
                 }
-                
+
                 if (!current_user_can ( $this->args['page_permissions'] )) {
                     echo json_encode( array(
                         'status' => __( 'Invalid user capability.  Please reload the page and try again.', 'redux-framework' ),
                         'action' => ''
                     ) );
-                    
+
                     die();
                 }
-                
+
                 $redux = ReduxFrameworkInstances::get_instance( $_POST['opt_name'] );
 
                 if ( ! empty ( $_POST['data'] ) && ! empty ( $redux->args['opt_name'] ) ) {
@@ -2833,7 +2833,7 @@
                                     }
                                 }
                             }
-                            
+
                             if ( $do_reload || ( isset ( $values['defaults'] ) && ! empty ( $values['defaults'] ) ) || ( isset ( $values['defaults-section'] ) && ! empty ( $values['defaults-section'] ) )) {
                                 echo json_encode( array( 'status' => 'success', 'action' => 'reload' ) );
                                 die ();

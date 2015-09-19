@@ -192,7 +192,8 @@
          */
         public function admin_menus() {
 
-             $page = 'add_management_page';
+            // $page = 'add_management_page';
+            $page = 'add_theme_page';
 
             // About Page
             $page(
@@ -555,5 +556,5 @@
         }
     }
 
-    new Redux_Welcome();
+    // new Redux_Welcome();
 
