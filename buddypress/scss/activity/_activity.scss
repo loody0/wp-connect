@@ -1,0 +1,86 @@
+.buddypress{
+    .bp_activity{
+        .entry-header .entry-title{
+            display: none;
+        }
+    }
+}
+
+#buddypress{
+    .post-box{
+        margin-bottom: 20px;
+        .nav-tabs{
+            border-bottom: none;
+            >li>a{
+                color: $color_text-dark;
+                font-size: 13px;
+                font-weight: 600;
+            }
+            >li.active>a, >li.active>a:focus, >li.active>a:hover{
+                color: $color_link-main;
+                border-color: $color_line;
+                border-bottom-color: transparent;
+            }
+            >li.more{
+                display: none;
+                .dropdown-menu{
+                    left: auto;
+                    right: 0;
+                    border-color: $color_line;
+                    @include material-shadow(1);
+                    >li>a{
+                        color: $color_text-dark;
+                        font-size: 13px;
+                        font-weight: 600;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                    }
+                    >.active>a, >.active>a:focus, >.active>a:hover{
+                        color: #FFF;
+                        background-color: $color_link-main;
+                    }
+                }
+            }
+            >li.open >a, >li.open >a:focus, >li.open >a:hover{
+                border-color: transparent;
+            }
+            >li.active >a, >li.active >a:focus, >li.active >a:hover{
+                border-color: $color_line;
+                border-bottom-color: transparent;
+            }
+        }
+        .tab-content{
+            .tab-pane{
+                background-color: #FFF;
+                border: solid 1px $color_line;
+                border-bottom: none;
+                padding: 20px 15px 5px;
+            }
+        }
+        textarea{
+            resize: none;
+            @include placeholder_color($color_text-grey);
+        }
+        .post-options{
+            border: solid 1px $color_line;
+            border-top: none;
+            background-color: #FFF;
+            padding: 0 15px 15px;
+            .post-button{
+                min-width: 100px;
+                @media(max-width: 767px){
+                    display: block;
+                    width: 100%;
+                    margin-top: 15px;
+                }
+            }
+        }
+        #whats-new-post-in-box, #whats-new-submit{
+            @media(min-width: 768px){
+                display: inline-block;
+            }
+        }
+    }
+}
+
+@import "entry";

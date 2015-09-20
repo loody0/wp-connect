@@ -32,13 +32,14 @@ jq( document ).ready( function() {
     if ( $whats_new.length && bp_get_querystring( 'r' ) ) {
         var $member_nicename = $whats_new.val();
 
-        jq( '#whats-new-options' ).animate( {
-            height: '50px'
-        } );
-
-        $whats_new.animate( {
-            height: '50px'
-        } );
+        // connect : no animate for text area
+//        jq( '#whats-new-options' ).animate( {
+//            height: '50px'
+//        } );
+//
+//        $whats_new.animate( {
+//            height: '50px'
+//        } );
 
         jq.scrollTo( $whats_new, 500, {
             offset: -125,
@@ -52,12 +53,13 @@ jq( document ).ready( function() {
 
     /* Textarea focus */
     $whats_new.focus( function() {
-        jq( '#whats-new-options' ).animate( {
-            height: '50px'
-        } );
-        jq( '#whats-new-form textarea' ).animate( {
-            height: '50px'
-        } );
+        // connect : no animate for text area
+//        jq( '#whats-new-options' ).animate( {
+//            height: '50px'
+//        } );
+//        jq( '#whats-new-form textarea' ).animate( {
+//            height: '50px'
+//        } );
         jq( '#aw-whats-new-submit' ).prop( 'disabled', false );
 
         var $whats_new_form = jq( 'form#whats-new-form' ),
@@ -86,12 +88,13 @@ jq( document ).ready( function() {
         if ( document.activeElement !== this ) {
             if ( !this.value.match( /\S+/ ) ) {
                 this.value = '';
-                jq( '#whats-new-options' ).animate( {
-                    height: '0'
-                } );
-                jq( 'form#whats-new-form textarea' ).animate( {
-                    height: '20px'
-                } );
+                // connect : no animate for text area
+//                jq( '#whats-new-options' ).animate( {
+//                    height: '0'
+//                } );
+//                jq( 'form#whats-new-form textarea' ).animate( {
+//                    height: '20px'
+//                } );
                 jq( '#aw-whats-new-submit' ).prop( 'disabled', true );
             }
         }
@@ -207,13 +210,14 @@ jq( document ).ready( function() {
                 newest_activities = '';
                 activity_last_recorded = 0;
             }
-
-            jq( '#whats-new-options' ).animate( {
-                height: '0px'
-            } );
-            jq( '#whats-new-form textarea' ).animate( {
-                height: '20px'
-            } );
+            
+            // connect : no animate for text area
+//            jq( '#whats-new-options' ).animate( {
+//                height: '0px'
+//            } );
+//            jq( '#whats-new-form textarea' ).animate( {
+//                height: '20px'
+//            } );
             jq( '#aw-whats-new-submit' ).prop( 'disabled', true ).removeClass( 'loading' );
         } );
 
@@ -808,7 +812,7 @@ jq( document ).ready( function() {
         if ( jq( this ).hasClass( 'no-ajax' ) ) {
             return;
         }
-        
+
         var target = jq( event.target ),
                 css_id, object, template;
 
@@ -824,7 +828,7 @@ jq( document ).ready( function() {
             }
 
             //bp_filter_request( object, jq.cookie('bp-' + object + '-filter'), jq.cookie('bp-' + object + '-scope') , 'div.' + object, target.parent().children('label').children('input').val(), 1, jq.cookie('bp-' + object + '-extras'), null, template );
-            
+
             //connect : change 4th parameter value
             bp_filter_request( object, jq.cookie( 'bp-' + object + '-filter' ), jq.cookie( 'bp-' + object + '-scope' ), 'div.' + object, target.parents( 'form' ).find( '.input-search' ).val(), 1, jq.cookie( 'bp-' + object + '-extras' ), null, template );
             return false;
@@ -919,7 +923,7 @@ jq( document ).ready( function() {
         if ( target.hasClass( 'button' ) ) {
             return true;
         }
-        
+
         if ( target.parent().parent().hasClass( 'pagination' ) && !target.parent().parent().hasClass( 'no-ajax' ) ) {
             if ( target.hasClass( 'dots' ) || target.hasClass( 'current' ) ) {
                 return false;
@@ -1242,19 +1246,19 @@ jq( document ).ready( function() {
                             parentdiv.addClass( 'pending_friend' );
                             parentdiv.fadeIn( 200 ).html( response );
                             // connect : add classes to a :  btn btn-default connect-btn connect-btn-default
-                            parentdiv.children('a').addClass('btn btn-default connect-btn connect-btn-default');
+                            parentdiv.children( 'a' ).addClass( 'btn btn-default connect-btn connect-btn-default' );
                         }
                 );
 
             } else if ( action === 'remove' ) {
                 jq( parentdiv ).fadeOut( 200,
-                        function() { 
+                        function() {
                             parentdiv.removeClass( 'remove_friend' );
                             parentdiv.removeClass( 'loading' );
                             parentdiv.addClass( 'add' );
                             parentdiv.fadeIn( 200 ).html( response );
                             // connect : add classes to a :  btn btn-default connect-btn connect-btn-primary
-                            parentdiv.children('a').addClass('btn btn-default connect-btn connect-btn-primary');
+                            parentdiv.children( 'a' ).addClass( 'btn btn-default connect-btn connect-btn-primary' );
                         }
                 );
             }
@@ -1892,7 +1896,7 @@ function bp_filter_request( object, filter, scope, target, search_terms, page, e
         /* animate to top if called from bottom pagination */
         if ( caller === 'pag-bottom' && jq( '#subnav' ).length ) {
             var top = jq( '#subnav' ).parent();
-            
+
             // connect : change scrollTop target (-100) since navbar is fixed
             var top_target = top.offset().top - 100;
             jq( 'html,body' ).animate( { scrollTop: top_target }, 'slow', function() {

@@ -26,6 +26,11 @@
         background: $color_btn-primary-bg-hover;
         border-color: $color_btn-primary-bg-hover;
     }
+    &:disabled{
+        background: $color_btn-primary-bg;
+        border-color: $color_btn-primary-bg;
+        color: #FFF;
+    }
 }
 
 .connect-paging{

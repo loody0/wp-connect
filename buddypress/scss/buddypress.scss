@@ -4,7 +4,11 @@
 #buddypress{
     position: relative;
 }
+.entry-content #buddypress p{
+    line-height: inherit;
+}
 
 @import "components";
 @import "members/members";
 @import "groups/groups";
+@import "activity/activity";

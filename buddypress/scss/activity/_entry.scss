@@ -1,0 +1,185 @@
+#buddypress{
+    .activity-list{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .activity-item{
+        margin-bottom: 20px;
+        &:hover{
+            .activity-meta .delete-activity{
+                display: block;
+            }
+        }
+        .activity-panel{
+            margin-bottom: 0;
+            position: relative;
+        }
+        .activity-avatar{
+            @media(min-width: 400px){
+                float: left;
+            }
+            margin-right: 10px;
+            margin-bottom: 10px;
+            img{
+                @include border-radius(5px);
+            }
+        }
+        .activity-header{
+            margin-bottom: 15px;
+            @media(min-width: 400px){
+                margin-left: 60px;
+                padding-right: 20px;
+            }
+            >p{
+                font-size: 13px;
+                margin-bottom: 0;
+                >a{
+                    &:first-child{
+                        font-weight: 700;
+                        font-size: 15px;
+                        color: $color_text;
+                        &:hover{
+                            color: $color_link-main;
+                        }
+                        &:after{
+                            content: '';
+                            display: block;
+                            margin-bottom: -2px;
+                        }
+                    }
+                }
+                .time-since{
+                    &:before{
+                        content: '';
+                        display: block;
+                    }
+                    font-size: 12px;
+                }
+                img.avatar{
+                    vertical-align: sub;
+                    margin-right: 5px;
+                    margin-left: 5px;
+                }
+            }
+        } // .activity header
+        .activity-inner{
+            margin-bottom: 15px;
+        }
+        .activity-meta{
+            .button{
+                color: $color_text-dark;
+                margin-right: 5px;
+            }
+            .delete-activity{
+                @media(min-width: 768px){
+                    display: none;
+                }
+                font-size: 0;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                color: $color_text-grey;
+                &:hover, &:active, &:focus{
+                    color: $color_link-main;
+                }
+                &:after{
+                    @include fa();
+                    content: "\f014";
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .activity-comment-panel{
+            @include border-radius(0);
+            margin-right: 3px;
+            margin-left: 3px;
+            margin-top: -2px;
+        }
+        .activity-comments{
+            padding: 0 15px;
+            form.ac-form{
+                padding: 15px 0;
+                display: none;
+                .ac-reply-avatar{
+                    @media(min-width: 400px){
+                        float: left;
+                    }
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                    img{
+                        @include border-radius(5px);
+                    }
+                }
+                .ac-reply-content{
+                    @media(min-width: 400px){
+                        margin-left: 50px;
+                    }
+                }
+            }
+            ul{
+                list-style: none;
+                li{
+                    margin-bottom: 10px;
+                    font-size: 13px;
+                    .acomment-avatar{
+                        float: left;
+                    }
+                    .acomment-meta, .acomment-content, .acomment-options{
+                        margin-left: 50px;
+                    }
+                    .acomment-meta{
+                        font-size: 12px;
+                        margin-bottom: 10px;
+                        >a:first-child{
+                            font-size: 14px;
+                            color: $color_text-dark;
+                            font-weight: 600;
+                            &:hover, &:focus, &:active{
+                                color: $color_link-main;
+                            }
+                            &:after{
+                                content: '';
+                                display: block;
+                                margin-top: -3px;
+                            }
+                        }
+                    }
+                    .acomment-options{
+                        margin-bottom: 10px;
+                        a{
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+            ul{
+                li{
+                    border-top: solid 1px $color_line;
+                    margin-bottom: 0;
+                    padding-top: 10px;
+                }
+            }
+            >ul:first-child{
+                >li:first-child{
+                    border-top: none;
+                }
+            }
+            >ul{
+                max-height: 350px;
+                overflow-y: auto;
+                padding: 15px 15px 0;
+                margin: 0 -15px 10px;
+                border-bottom: solid 1px $color_line;
+                li{
+                    >ul{
+                        padding-left: 30px;
+                    }
+                }
+            }
+
+        }
+    }// .activity-item
+
+}

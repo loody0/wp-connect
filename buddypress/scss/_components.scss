@@ -131,27 +131,26 @@
     }
 }
 #buddypress{
-    .dir-form{
-        .connect-order-select-wrap{
-            position: absolute;
-            top: 18px;
-            right: 0;
-            padding-left: 10px;
-            background-color: $color_body-background;
-            margin-bottom: 15px;
-            text-align: right;
-            @media(max-width: 767px){
-                position: relative;
-                top: auto;
-                right: auto;
-            }
-            .connect-order-select{
-                width: auto;
-                max-width: 100%;
-                display: inline-block;
-            }
+    .connect-order-select-wrap{
+        position: absolute;
+        top: 18px;
+        right: 0;
+        padding-left: 10px;
+        background-color: $color_body-background;
+        margin-bottom: 15px;
+        text-align: right;
+        @media(max-width: 767px){
+            position: relative;
+            top: auto;
+            right: auto;
+        }
+        .connect-order-select{
+            width: auto;
+            max-width: 100%;
+            display: inline-block;
         }
     }
+
 }
 
 #buddypress{
@@ -196,11 +195,22 @@
                     content: "\e257";   
                 }
             }
-            
+
         } // .pagination-links
         .pag-count{
             line-height: 35px;
         }
-        
+
     } // .connect pagination
+}
+
+#buddypress{
+    input.form-control, select.form-control{
+        border-color: $color_input-border;
+        color: $color_input-text;
+        @include placeholder_color($color_text-grey);
+        &:focus{
+            border-color: #66afe9;
+        }
+    }
 }

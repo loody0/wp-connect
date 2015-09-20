@@ -260,6 +260,11 @@ th {
   background: #bf392c;
   border-color: #bf392c;
 }
+.connect-btn-primary:disabled, .comments-area p.form-submit input.submit:disabled {
+  background: #ef4837;
+  border-color: #ef4837;
+  color: #FFF;
+}
 
 .connect-paging {
   text-align: right;

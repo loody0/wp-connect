@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.entry-content #buddypress p {
+  line-height: inherit;
+}
+
 #buddypress .dir-search {
   margin-bottom: 30px;
 }
@@ -152,7 +156,7 @@
   list-style: none;
 }
 
-#buddypress .dir-form .connect-order-select-wrap {
+#buddypress .connect-order-select-wrap {
   position: absolute;
   top: 18px;
   right: 0;
@@ -162,13 +166,13 @@
   text-align: right;
 }
 @media (max-width: 767px) {
-  #buddypress .dir-form .connect-order-select-wrap {
+  #buddypress .connect-order-select-wrap {
     position: relative;
     top: auto;
     right: auto;
   }
 }
-#buddypress .dir-form .connect-order-select-wrap .connect-order-select {
+#buddypress .connect-order-select-wrap .connect-order-select {
   width: auto;
   max-width: 100%;
   display: inline-block;
@@ -226,6 +230,28 @@
 }
 #buddypress .connect-pagination .pag-count {
   line-height: 35px;
+}
+
+#buddypress input.form-control, #buddypress select.form-control {
+  border-color: #d8dcde;
+  color: #7c7a7a;
+}
+#buddypress input.form-control::-webkit-input-placeholder, #buddypress select.form-control::-webkit-input-placeholder {
+  color: #a1a1a1;
+}
+#buddypress input.form-control:-moz-placeholder, #buddypress select.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  color: #a1a1a1;
+}
+#buddypress input.form-control::-moz-placeholder, #buddypress select.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #a1a1a1;
+}
+#buddypress input.form-control:-ms-input-placeholder, #buddypress select.form-control:-ms-input-placeholder {
+  color: #a1a1a1;
+}
+#buddypress input.form-control:focus, #buddypress select.form-control:focus {
+  border-color: #66afe9;
 }
 
 #buddypress .dir-list.members ul.item-list {
@@ -417,6 +443,289 @@
 #buddypress #item-header #group-admins li img {
   width: 40px;
   height: 40px;
+}
+
+.buddypress .bp_activity .entry-header .entry-title {
+  display: none;
+}
+
+#buddypress .post-box {
+  margin-bottom: 20px;
+}
+#buddypress .post-box .nav-tabs {
+  border-bottom: none;
+}
+#buddypress .post-box .nav-tabs > li > a {
+  color: #66757f;
+  font-size: 13px;
+  font-weight: 600;
+}
+#buddypress .post-box .nav-tabs > li.active > a, #buddypress .post-box .nav-tabs > li.active > a:focus, #buddypress .post-box .nav-tabs > li.active > a:hover {
+  color: #ef4837;
+  border-color: #d8dcde;
+  border-bottom-color: transparent;
+}
+#buddypress .post-box .nav-tabs > li.more {
+  display: none;
+}
+#buddypress .post-box .nav-tabs > li.more .dropdown-menu {
+  left: auto;
+  right: 0;
+  border-color: #d8dcde;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+#buddypress .post-box .nav-tabs > li.more .dropdown-menu > li > a {
+  color: #66757f;
+  font-size: 13px;
+  font-weight: 600;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#buddypress .post-box .nav-tabs > li.more .dropdown-menu > .active > a, #buddypress .post-box .nav-tabs > li.more .dropdown-menu > .active > a:focus, #buddypress .post-box .nav-tabs > li.more .dropdown-menu > .active > a:hover {
+  color: #FFF;
+  background-color: #ef4837;
+}
+#buddypress .post-box .nav-tabs > li.open > a, #buddypress .post-box .nav-tabs > li.open > a:focus, #buddypress .post-box .nav-tabs > li.open > a:hover {
+  border-color: transparent;
+}
+#buddypress .post-box .nav-tabs > li.active > a, #buddypress .post-box .nav-tabs > li.active > a:focus, #buddypress .post-box .nav-tabs > li.active > a:hover {
+  border-color: #d8dcde;
+  border-bottom-color: transparent;
+}
+#buddypress .post-box .tab-content .tab-pane {
+  background-color: #FFF;
+  border: solid 1px #d8dcde;
+  border-bottom: none;
+  padding: 20px 15px 5px;
+}
+#buddypress .post-box textarea {
+  resize: none;
+}
+#buddypress .post-box textarea::-webkit-input-placeholder {
+  color: #a1a1a1;
+}
+#buddypress .post-box textarea:-moz-placeholder {
+  /* Firefox 18- */
+  color: #a1a1a1;
+}
+#buddypress .post-box textarea::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #a1a1a1;
+}
+#buddypress .post-box textarea:-ms-input-placeholder {
+  color: #a1a1a1;
+}
+#buddypress .post-box .post-options {
+  border: solid 1px #d8dcde;
+  border-top: none;
+  background-color: #FFF;
+  padding: 0 15px 15px;
+}
+#buddypress .post-box .post-options .post-button {
+  min-width: 100px;
+}
+@media (max-width: 767px) {
+  #buddypress .post-box .post-options .post-button {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+@media (min-width: 768px) {
+  #buddypress .post-box #whats-new-post-in-box, #buddypress .post-box #whats-new-submit {
+    display: inline-block;
+  }
+}
+
+#buddypress .activity-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#buddypress .activity-item {
+  margin-bottom: 20px;
+}
+#buddypress .activity-item:hover .activity-meta .delete-activity {
+  display: block;
+}
+#buddypress .activity-item .activity-panel {
+  margin-bottom: 0;
+  position: relative;
+}
+#buddypress .activity-item .activity-avatar {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+@media (min-width: 400px) {
+  #buddypress .activity-item .activity-avatar {
+    float: left;
+  }
+}
+#buddypress .activity-item .activity-avatar img {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#buddypress .activity-item .activity-header {
+  margin-bottom: 15px;
+}
+@media (min-width: 400px) {
+  #buddypress .activity-item .activity-header {
+    margin-left: 60px;
+    padding-right: 20px;
+  }
+}
+#buddypress .activity-item .activity-header > p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+#buddypress .activity-item .activity-header > p > a:first-child {
+  font-weight: 700;
+  font-size: 15px;
+  color: #7c7a7a;
+}
+#buddypress .activity-item .activity-header > p > a:first-child:hover {
+  color: #ef4837;
+}
+#buddypress .activity-item .activity-header > p > a:first-child:after {
+  content: '';
+  display: block;
+  margin-bottom: -2px;
+}
+#buddypress .activity-item .activity-header > p .time-since {
+  font-size: 12px;
+}
+#buddypress .activity-item .activity-header > p .time-since:before {
+  content: '';
+  display: block;
+}
+#buddypress .activity-item .activity-header > p img.avatar {
+  vertical-align: sub;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+#buddypress .activity-item .activity-inner {
+  margin-bottom: 15px;
+}
+#buddypress .activity-item .activity-meta .button {
+  color: #66757f;
+  margin-right: 5px;
+}
+#buddypress .activity-item .activity-meta .delete-activity {
+  font-size: 0;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #a1a1a1;
+}
+@media (min-width: 768px) {
+  #buddypress .activity-item .activity-meta .delete-activity {
+    display: none;
+  }
+}
+#buddypress .activity-item .activity-meta .delete-activity:hover, #buddypress .activity-item .activity-meta .delete-activity:active, #buddypress .activity-item .activity-meta .delete-activity:focus {
+  color: #ef4837;
+}
+#buddypress .activity-item .activity-meta .delete-activity:after {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  content: "\f014";
+  font-size: 14px;
+}
+#buddypress .activity-item .activity-comment-panel {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  margin-right: 3px;
+  margin-left: 3px;
+  margin-top: -2px;
+}
+#buddypress .activity-item .activity-comments {
+  padding: 0 15px;
+}
+#buddypress .activity-item .activity-comments form.ac-form {
+  padding: 15px 0;
+  display: none;
+}
+#buddypress .activity-item .activity-comments form.ac-form .ac-reply-avatar {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+@media (min-width: 400px) {
+  #buddypress .activity-item .activity-comments form.ac-form .ac-reply-avatar {
+    float: left;
+  }
+}
+#buddypress .activity-item .activity-comments form.ac-form .ac-reply-avatar img {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+@media (min-width: 400px) {
+  #buddypress .activity-item .activity-comments form.ac-form .ac-reply-content {
+    margin-left: 50px;
+  }
+}
+#buddypress .activity-item .activity-comments ul {
+  list-style: none;
+}
+#buddypress .activity-item .activity-comments ul li {
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+#buddypress .activity-item .activity-comments ul li .acomment-avatar {
+  float: left;
+}
+#buddypress .activity-item .activity-comments ul li .acomment-meta, #buddypress .activity-item .activity-comments ul li .acomment-content, #buddypress .activity-item .activity-comments ul li .acomment-options {
+  margin-left: 50px;
+}
+#buddypress .activity-item .activity-comments ul li .acomment-meta {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+#buddypress .activity-item .activity-comments ul li .acomment-meta > a:first-child {
+  font-size: 14px;
+  color: #66757f;
+  font-weight: 600;
+}
+#buddypress .activity-item .activity-comments ul li .acomment-meta > a:first-child:hover, #buddypress .activity-item .activity-comments ul li .acomment-meta > a:first-child:focus, #buddypress .activity-item .activity-comments ul li .acomment-meta > a:first-child:active {
+  color: #ef4837;
+}
+#buddypress .activity-item .activity-comments ul li .acomment-meta > a:first-child:after {
+  content: '';
+  display: block;
+  margin-top: -3px;
+}
+#buddypress .activity-item .activity-comments ul li .acomment-options {
+  margin-bottom: 10px;
+}
+#buddypress .activity-item .activity-comments ul li .acomment-options a {
+  margin-right: 10px;
+}
+#buddypress .activity-item .activity-comments ul li {
+  border-top: solid 1px #d8dcde;
+  margin-bottom: 0;
+  padding-top: 10px;
+}
+#buddypress .activity-item .activity-comments > ul:first-child > li:first-child {
+  border-top: none;
+}
+#buddypress .activity-item .activity-comments > ul {
+  max-height: 350px;
+  overflow-y: auto;
+  padding: 15px 15px 0;
+  margin: 0 -15px 10px;
+  border-bottom: solid 1px #d8dcde;
+}
+#buddypress .activity-item .activity-comments > ul li > ul {
+  padding-left: 30px;
 }
 
 /*# sourceMappingURL=buddypress.css.map */

@@ -24,7 +24,9 @@ function connect_bp_directory_members_search_form( $search_form_html ) {
 
 add_filter( 'bp_directory_members_search_form', 'connect_bp_directory_members_search_form' );
 
-// add class to add friend button
+/**
+ * add class to add friend button
+ */
 function connect_add_class_friend_button( $button ) {
 
     // id : pending, awaiting_response, is_friend, not_friends
@@ -47,7 +49,9 @@ function connect_add_class_friend_button( $button ) {
 
 add_filter( 'bp_get_add_friend_button', 'connect_add_class_friend_button' );
 
-// custom display members pagination link
+/**
+ * custom members pagination link display
+ */
 function connect_members_pagination_link( $pag_links ) {
     global $members_template;
 
@@ -77,7 +81,9 @@ function connect_bp_directory_groups_search_form( $search_form_html ) {
 
 add_filter( 'bp_directory_groups_search_form', 'connect_bp_directory_groups_search_form' );
 
-// change group description excerpt length
+/**
+ * change group description excerpt length
+ */
 function connect_bp_get_group_description_excerpt( $desc, $group ) {
     $desc = bp_create_excerpt( $group->description, 120 );
     return $desc;
@@ -85,7 +91,9 @@ function connect_bp_get_group_description_excerpt( $desc, $group ) {
 
 add_filter( 'bp_get_group_description_excerpt', 'connect_bp_get_group_description_excerpt', 20, 2 );
 
-// add class to add group join button
+/**
+ * add class to add group join button
+ */
 function connect_bp_group_join_button( $button ) {
     // id: join_group, leave_group, accept_invite, membership_requested, request_membership
     $class = ' btn btn-default connect-btn';
@@ -109,7 +117,9 @@ function connect_bp_group_join_button( $button ) {
 
 add_filter( 'bp_get_group_join_button', 'connect_bp_group_join_button' );
 
-// custom display groups pagination link
+/**
+ * custom display groups pagination link
+ */
 function connect_groups_pagination_link( $pag_links ) {
     global $groups_template;
     $total = ceil( ( int ) $groups_template->total_group_count / ( int ) $groups_template->pag_num );
@@ -121,11 +131,15 @@ function connect_groups_pagination_link( $pag_links ) {
 
 add_filter( 'bp_get_groups_pagination_links', 'connect_groups_pagination_link' );
 
-// add class to send public message button
+/**
+ * add class to send public message button
+ */
 function connect_bp_send_message_button( $button ) {
     $class = ' btn btn-default connect-btn connect-btn-default';
     $button[ 'link_class' ] = $button[ 'link_class' ] . $class;
     return $button;
 }
+
 add_filter( 'bp_get_send_public_message_button', 'connect_bp_send_message_button' );
 add_filter( 'bp_get_send_message_button_args', 'connect_bp_send_message_button' );
+
