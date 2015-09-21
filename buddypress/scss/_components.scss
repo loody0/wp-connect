@@ -229,3 +229,46 @@
     clip: rect(1px,1px,1px,1px);
     position: absolute;
 }
+
+#pass-strength-result{
+    &.short{
+        color: #a94442;
+        background-color: #f2dede;
+        border-color: #ebccd1;
+    }
+    &.bad{
+
+    }
+}
+#buddypress{
+    #pass-strength-result {
+        padding: 5px 10px;
+        margin-bottom: 10px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        background-color: #eee;
+        display: none;
+        text-align: center;
+        width: 150px;
+        max-width: 100%;
+        &.error, &.bad, &.good, &.short, &.strong{
+            display: block;
+        }
+        &.error, &.bad{
+            background-color: #ffb78c;
+            border-color: #ff853c;
+        }
+        &.good{
+            background-color: #ffec8b;
+            border-color: #fc0;
+        }
+        &.short{
+            background-color: #ffa0a0;
+            border-color: #f04040;
+        }
+        &.strong{
+            background-color: #c3ff88;
+            border-color: #8dff1c;
+        }
+    }
+}

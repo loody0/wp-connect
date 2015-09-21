@@ -269,6 +269,43 @@
   position: absolute;
 }
 
+#pass-strength-result.short {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+#buddypress #pass-strength-result {
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #eee;
+  display: none;
+  text-align: center;
+  width: 150px;
+  max-width: 100%;
+}
+#buddypress #pass-strength-result.error, #buddypress #pass-strength-result.bad, #buddypress #pass-strength-result.good, #buddypress #pass-strength-result.short, #buddypress #pass-strength-result.strong {
+  display: block;
+}
+#buddypress #pass-strength-result.error, #buddypress #pass-strength-result.bad {
+  background-color: #ffb78c;
+  border-color: #ff853c;
+}
+#buddypress #pass-strength-result.good {
+  background-color: #ffec8b;
+  border-color: #fc0;
+}
+#buddypress #pass-strength-result.short {
+  background-color: #ffa0a0;
+  border-color: #f04040;
+}
+#buddypress #pass-strength-result.strong {
+  background-color: #c3ff88;
+  border-color: #8dff1c;
+}
+
 #buddypress .dir-list.members ul.item-list {
   margin: 0;
   padding: 0;
@@ -581,6 +618,25 @@
 }
 #buddypress .dir-list.groups .action .group-button {
   float: right;
+}
+
+#buddypress .groups-invites h4 {
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+@media (min-width: 400px) {
+  #buddypress .groups-invites h4 {
+    margin-left: 60px;
+  }
+}
+#buddypress .groups-invites p.desc {
+  font-size: 13px;
+}
+@media (min-width: 400px) {
+  #buddypress .groups-invites p.desc {
+    margin-left: 60px;
+  }
 }
 
 .buddypress .bp_group .entry-header .entry-title {
@@ -899,6 +955,60 @@
 }
 #buddypress .activity-item .activity-comments > ul li > ul {
   padding-left: 30px;
+}
+
+table.notification-settings {
+  width: 100%;
+  margin-bottom: 10px;
+}
+table.notification-settings td:first-child, table.notification-settings th.icon {
+  display: none;
+}
+table.notification-settings thead tr > th:nth-of-type(3), table.notification-settings thead tr > th:nth-of-type(4) {
+  width: 10%;
+  text-align: center;
+}
+table.notification-settings thead tr {
+  background-color: #DDD;
+}
+table.notification-settings thead tr > th {
+  border: solid 1px #d8dcde;
+  padding: 5px 10px;
+}
+table.notification-settings tbody tr > td:nth-of-type(3), table.notification-settings tbody tr > td:nth-of-type(4) {
+  text-align: center;
+}
+table.notification-settings tbody tr > td {
+  border: solid 1px #DDD;
+  padding: 5px 10px;
+}
+table.notification-settings tbody tr:hover {
+  background-color: #EEE;
+}
+
+table.profile-settings {
+  width: 100%;
+  margin-bottom: 10px;
+}
+table.profile-settings thead tr > th:nth-of-type(1) {
+  width: 70%;
+}
+table.profile-settings thead tr > th:nth-of-type(2) {
+  width: 30%;
+}
+table.profile-settings thead tr {
+  background-color: #DDD;
+}
+table.profile-settings thead tr > th {
+  border: solid 1px #d8dcde;
+  padding: 5px 10px;
+}
+table.profile-settings tbody tr > td {
+  border: solid 1px #DDD;
+  padding: 5px 10px;
+}
+table.profile-settings tbody tr:hover {
+  background-color: #EEE;
 }
 
 /*# sourceMappingURL=buddypress.css.map */
