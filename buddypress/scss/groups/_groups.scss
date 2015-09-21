@@ -122,13 +122,21 @@
             background-color: rgba(0,0,0,0.03);
             @media(min-width: 992px){
                 float: left;
-                width: 25%;
+                width: 250px;
             }
         }
         .main-column{
-
+            @media(min-width: 992px){
+                margin-left: 270px;
+            }
+        }
+        & ~ .submit{
+            @media(min-width: 992px){
+                margin-left: 270px;
+            }
         }
     }
+    
 }
 
 @import "group-single";

@@ -676,7 +676,17 @@
 @media (min-width: 992px) {
   #buddypress #group-create-body .left-menu, #buddypress .invite .left-menu {
     float: left;
-    width: 25%;
+    width: 250px;
+  }
+}
+@media (min-width: 992px) {
+  #buddypress #group-create-body .main-column, #buddypress .invite .main-column {
+    margin-left: 270px;
+  }
+}
+@media (min-width: 992px) {
+  #buddypress #group-create-body ~ .submit, #buddypress .invite ~ .submit {
+    margin-left: 270px;
   }
 }
 
