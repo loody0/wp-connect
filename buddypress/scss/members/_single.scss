@@ -1,5 +1,5 @@
 #buddypress{
-    div.single-item-list-tabs{
+    div.connect-single-item-list-tabs{
         margin-bottom: 5px;
         ul{
             border-bottom: none;
@@ -15,6 +15,9 @@
                     }
                 }
             }
+        }
+        select{
+            margin-left: 15px;
         }
     }
 }

@@ -261,6 +261,11 @@
   border-color: #66afe9;
 }
 
+.bp-screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+}
+
 #buddypress .dir-list.members ul.item-list {
   margin: 0;
   padding: 0;
@@ -375,21 +380,24 @@
   padding-bottom: 8px;
 }
 
-#buddypress div.single-item-list-tabs {
+#buddypress div.connect-single-item-list-tabs {
   margin-bottom: 5px;
 }
-#buddypress div.single-item-list-tabs ul {
+#buddypress div.connect-single-item-list-tabs ul {
   border-bottom: none;
 }
-#buddypress div.single-item-list-tabs ul:after {
+#buddypress div.connect-single-item-list-tabs ul:after {
   display: none;
 }
-#buddypress div.single-item-list-tabs ul > li {
+#buddypress div.connect-single-item-list-tabs ul > li {
   border-bottom: none;
   margin-bottom: 10px;
 }
-#buddypress div.single-item-list-tabs ul > li.selected > a:before, #buddypress div.single-item-list-tabs ul > li.current > a:before {
+#buddypress div.connect-single-item-list-tabs ul > li.selected > a:before, #buddypress div.connect-single-item-list-tabs ul > li.current > a:before {
   display: none;
+}
+#buddypress div.connect-single-item-list-tabs select {
+  margin-left: 15px;
 }
 
 #buddypress .profile h4 {

@@ -1,4 +1,4 @@
-<div id="message" class="info">
+<div id="message" class="info alert alert-info">
 
 	<?php if ( bp_is_current_action( 'unread' ) ) : ?>
 

@@ -9,12 +9,12 @@
 
 ?>
 
-<div class="item-list-tabs no-ajax" id="subnav" role="navigation">
+<div class="item-list-tabs connect-item-list-tabs connect-single-item-list-tabs no-ajax" id="subnav" role="navigation">
 	<ul>
 		<?php bp_get_options_nav(); ?>
 
 		<li id="members-order-select" class="last filter">
-			<?php bp_notifications_sort_order_form(); ?>
+			<?php connect_bp_notifications_sort_order_form(); ?>
 		</li>
 	</ul>
 </div>

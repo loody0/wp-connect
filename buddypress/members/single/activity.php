@@ -7,14 +7,14 @@
  */
 ?>
 
-<div class="item-list-tabs connect-item-list-tabs single-item-list-tabs no-ajax text-right" id="subnav" role="navigation">
+<div class="item-list-tabs connect-item-list-tabs connect-single-item-list-tabs no-ajax text-right" id="subnav" role="navigation">
     <ul>
 
         <?php bp_get_options_nav(); ?>
 
         <li id="activity-filter-select" class="last">
 
-            <select id="activity-filter-by" class="form-control" style="margin-left: 15px;">
+            <select id="activity-filter-by" class="form-control">
                 <option value="-1"><?php _e( '&mdash; Everything &mdash;', 'buddypress' ); ?></option>
 
                 <?php bp_activity_show_filters(); ?>

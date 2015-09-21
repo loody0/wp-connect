@@ -1,35 +1,38 @@
 <form action="" method="post" id="notifications-bulk-management">
-	<table class="notifications">
-		<thead>
-			<tr>
-				<th class="icon"></th>
-				<th class="bulk-select-all"><label class="bp-screen-reader-text" for="select-all-notifications"><?php _e( 'Select all', 'buddypress' ); ?></label><input id="select-all-notifications" type="checkbox"></th>
-				<th class="title"><?php _e( 'Notification', 'buddypress' ); ?></th>
-				<th class="date"><?php _e( 'Date Received', 'buddypress' ); ?></th>
-				<th class="actions"><?php _e( 'Actions',    'buddypress' ); ?></th>
-			</tr>
-		</thead>
+    <div class="table-responsive">
 
-		<tbody>
+        <table class="notifications table table-condensed table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="icon"></th>
+                    <th class="bulk-select-all"><label class="bp-screen-reader-text" for="select-all-notifications"><?php _e( 'Select all', 'buddypress' ); ?></label><input id="select-all-notifications" type="checkbox"></th>
+                    <th class="title"><?php _e( 'Notification', 'buddypress' ); ?></th>
+                    <th class="date"><?php _e( 'Date Received', 'buddypress' ); ?></th>
+                    <th class="actions"><?php _e( 'Actions', 'buddypress' ); ?></th>
+                </tr>
+            </thead>
 
-			<?php while ( bp_the_notifications() ) : bp_the_notification(); ?>
+            <tbody>
 
-				<tr>
-					<td></td>
-					<td class="bulk-select-check"><input id="<?php bp_the_notification_id(); ?>" type="checkbox" name="notifications[]" value="<?php bp_the_notification_id(); ?>" class="notification-check"></td>
-					<td class="notification-description"><?php bp_the_notification_description();  ?></td>
-					<td class="notification-since"><?php bp_the_notification_time_since();   ?></td>
-					<td class="notification-actions"><?php bp_the_notification_action_links(); ?></td>
-				</tr>
+                <?php while ( bp_the_notifications() ) : bp_the_notification(); ?>
 
-			<?php endwhile; ?>
+                    <tr>
+                        <td></td>
+                        <td class="bulk-select-check"><input id="<?php bp_the_notification_id(); ?>" type="checkbox" name="notifications[]" value="<?php bp_the_notification_id(); ?>" class="notification-check"></td>
+                        <td class="notification-description"><?php bp_the_notification_description(); ?></td>
+                        <td class="notification-since"><?php bp_the_notification_time_since(); ?></td>
+                        <td class="notification-actions"><?php bp_the_notification_action_links(); ?></td>
+                    </tr>
 
-		</tbody>
-	</table>
+                <?php endwhile; ?>
 
-	<div class="notifications-options-nav">
-		<?php bp_notifications_bulk_management_dropdown(); ?>
-	</div><!-- .notifications-options-nav -->
+            </tbody>
+        </table>
+    </div>
 
-	<?php wp_nonce_field( 'notifications_bulk_nonce', 'notifications_bulk_nonce' ); ?>
+    <div class="notifications-options-nav">
+        <?php connect_bp_notifications_bulk_management_dropdown(); ?>
+    </div><!-- .notifications-options-nav -->
+
+    <?php wp_nonce_field( 'notifications_bulk_nonce', 'notifications_bulk_nonce' ); ?>
 </form>

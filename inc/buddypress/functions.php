@@ -260,3 +260,60 @@ function connect_bp_xprofile_field_edit_html_elements( $r, $class ) {
 }
 
 add_filter( 'bp_xprofile_field_edit_html_elements', 'connect_bp_xprofile_field_edit_html_elements', 10, 2 );
+
+/**
+ * Output the form for changing the sort order of notifications
+ *
+ */
+function connect_bp_notifications_sort_order_form() {
+
+    // Setup local variables
+    $orders = array( 'DESC', 'ASC' );
+    $selected = 'DESC';
+
+    // Check for a custom sort_order
+    if ( !empty( $_REQUEST[ 'sort_order' ] ) ) {
+        if ( in_array( $_REQUEST[ 'sort_order' ], $orders ) ) {
+            $selected = $_REQUEST[ 'sort_order' ];
+        }
+    }
+    ?>
+
+    <form action="" method="get" id="notifications-sort-order">
+
+        <select id="notifications-sort-order-list" name="sort_order" onchange="this.form.submit();" class="form-control">
+            <option value="DESC" <?php selected( $selected, 'DESC' ); ?>><?php _e( 'Newest First', 'buddypress' ); ?></option>
+            <option value="ASC"  <?php selected( $selected, 'ASC' ); ?>><?php _e( 'Oldest First', 'buddypress' ); ?></option>
+        </select>
+
+        <noscript>
+        <input id="submit" type="submit" name="form-submit" class="submit" value="<?php esc_attr_e( 'Go', 'buddypress' ); ?>" />
+        </noscript>
+    </form>
+
+    <?php
+}
+
+/**
+ * Output the dropdown for bulk management of notifications.
+ *
+ */
+function connect_bp_notifications_bulk_management_dropdown() {
+    ?>
+    <div class="form-inline">
+
+        <label class="bp-screen-reader-text" for="notification-select"><?php _e( 'Select Bulk Action', 'buddypress' ); ?></label>
+        <select name="notification_bulk_action" id="notification-select" class="form-control">
+            <option value="" selected="selected"><?php _e( 'Bulk Actions', 'buddypress' ); ?></option>
+
+            <?php if ( bp_is_current_action( 'unread' ) ) : ?>
+                <option value="read"><?php _e( 'Mark read', 'buddypress' ); ?></option>
+            <?php elseif ( bp_is_current_action( 'read' ) ) : ?>
+                <option value="unread"><?php _e( 'Mark unread', 'buddypress' ); ?></option>
+            <?php endif; ?>
+            <option value="delete"><?php _e( 'Delete', 'buddypress' ); ?></option>
+        </select>
+        <input type="submit" id="notification-bulk-manage" class="button action btn btn-default connect-btn connect-btn-default" value="<?php esc_attr_e( 'Apply', 'buddypress' ); ?>">
+    </div>
+    <?php
+}
