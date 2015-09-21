@@ -164,7 +164,7 @@ do_action( 'bp_before_directory_activity' );
     ?>
     
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             
             <?php if ( is_user_logged_in() ) : ?>
 
