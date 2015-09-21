@@ -1,28 +1,4 @@
 #buddypress{
-    div.connect-single-item-list-tabs{
-        margin-bottom: 5px;
-        ul{
-            border-bottom: none;
-            &:after{
-                display: none;
-            }
-            >li{
-                border-bottom: none;
-                margin-bottom: 10px;
-                &.selected, &.current {
-                    >a:before{
-                        display: none;
-                    }
-                }
-            }
-        }
-        select{
-            margin-left: 15px;
-        }
-    }
-}
-
-#buddypress{
     .profile{
         h4{
             font-weight: 600;

@@ -121,6 +121,31 @@
         }
     }
 }
+
+#buddypress{
+    div.connect-single-item-list-tabs{
+        margin-bottom: 5px;
+        ul{
+            border-bottom: none;
+            &:after{
+                display: none;
+            }
+            >li{
+                border-bottom: none;
+                margin-bottom: 10px;
+                &.selected, &.current {
+                    >a:before{
+                        display: none;
+                    }
+                }
+            }
+        }
+        select{
+            margin-left: 15px;
+        }
+    }
+}
+
 #buddypress{
     div.item-list-tabs{
         ul{
@@ -280,5 +305,24 @@
                 width: 75%;
             }
         }
+    }
+}
+
+#message{
+    margin-bottom: 15px;
+    padding: 10px;
+    border: solid 1px transparent;
+    p{
+        margin: 0;
+    }
+    &.info, &.updated{
+        color: $color_notice-info-text;
+        background-color: $color_notice-info-bg;
+        border-color: $color_notice-info-border;
+    }
+    &.error{
+        color: $color_notice-error-text;
+        background-color: $color_notice-error-bg;
+        border-color: $color_notice-error-border;
     }
 }
