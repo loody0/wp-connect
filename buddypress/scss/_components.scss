@@ -60,6 +60,7 @@
                 margin-bottom: 15px;
                 line-height: 27px;
                 >a, >span{
+                    line-height: initial;
                     padding: 0 15px;
                     display: inline-block;
                     color: $color_text-dark;
@@ -91,9 +92,8 @@
                     font-size: 70%;
                     vertical-align: middle;
                     text-align: center;
-                    line-height: 24px;
                 }
-                &.selected{
+                &.selected, &.current{
                     >a{
                         background-color: transparent;
                         color: $color_link-main;
@@ -104,7 +104,7 @@
                             @include glyphicon();
                             position: absolute;
                             top: auto;
-                            bottom: -16px;
+                            bottom: -21px;
                             left: 45%;
                             @include transform(translateX(-50%));
                             font-size: 16px;

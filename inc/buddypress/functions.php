@@ -214,3 +214,49 @@ function connect_bp_groups_members_filter() {
     </li>
     <?php
 }
+
+/**
+ * add class to get_edit_field_html_elements ( profile edit fieleds )
+ * 
+ * @see BP_XProfile_Field_Type::get_edit_field_html_elements()
+ * 
+ * @param array $r html_elements
+ * @param string $class Class name
+ * 
+ * @return array $r html elements
+ */
+function connect_bp_xprofile_field_edit_html_elements( $r, $class ) {
+//    'checkbox' => 'BP_XProfile_Field_Type_Checkbox',
+//    'datebox' => 'BP_XProfile_Field_Type_Datebox',
+//    'multiselectbox' => 'BP_XProfile_Field_Type_Multiselectbox',
+//    'number' => 'BP_XProfile_Field_Type_Number',
+//    'url' => 'BP_XProfile_Field_Type_URL',
+//    'radio' => 'BP_XProfile_Field_Type_Radiobutton',
+//    'selectbox' => 'BP_XProfile_Field_Type_Selectbox',
+//    'textarea' => 'BP_XProfile_Field_Type_Textarea',
+//    'textbox' => 'BP_XProfile_Field_Type_Textbox',
+    $fields = array(
+        'BP_XProfile_Field_Type_Textbox',
+        'BP_XProfile_Field_Type_Textarea',
+        'BP_XProfile_Field_Type_Number',
+        'BP_XProfile_Field_Type_URL',
+        'BP_XProfile_Field_Type_Multiselectbox'
+    );
+    if ( in_array( $class, $fields ) ) {
+        $r[ 'class' ] = 'form-control';
+        return $r;
+    }
+
+    $fields = array(
+        'BP_XProfile_Field_Type_Selectbox',
+        'BP_XProfile_Field_Type_Datebox'
+    );
+    if ( in_array( $class, $fields ) ) {
+        $r[ 'class' ] = 'form-control field-inline-block';
+        return $r;
+    }
+
+    return $r;
+}
+
+add_filter( 'bp_xprofile_field_edit_html_elements', 'connect_bp_xprofile_field_edit_html_elements', 10, 2 );
