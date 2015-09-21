@@ -1,6 +1,6 @@
 <?php if ( bp_has_notifications() ) : ?>
 
-	<div id="pag-top" class="pagination no-ajax connect-pagination clearfix">
+	<div id="pag-top" class="pagination no-ajax connect-pagination connect-pagination-top clearfix">
 		<div class="pag-count pull-left" id="notifications-count-top">
 			<?php bp_notifications_pagination_count(); ?>
 		</div>

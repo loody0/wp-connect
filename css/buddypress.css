@@ -238,6 +238,9 @@
 #buddypress .connect-pagination .pag-count {
   line-height: 35px;
 }
+#buddypress .connect-pagination-top {
+  margin-top: 0;
+}
 
 #buddypress input.form-control, #buddypress select.form-control {
   border-color: #d8dcde;
@@ -772,7 +775,7 @@
   display: block;
 }
 #buddypress .activity-item .activity-header > p img.avatar {
-  vertical-align: sub;
+  vertical-align: middle;
   margin-right: 5px;
   margin-left: 5px;
 }
