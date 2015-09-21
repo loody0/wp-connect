@@ -103,7 +103,7 @@
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-#buddypress div.connect-item-list-tabs ul > li:last-child a:after {
+#buddypress div.connect-item-list-tabs ul > li:last-child a:after, #buddypress div.connect-item-list-tabs ul > li:last-child span:after {
   border-right: none;
 }
 #buddypress div.connect-item-list-tabs ul > li > a span {
@@ -636,6 +636,47 @@
 @media (min-width: 400px) {
   #buddypress .groups-invites p.desc {
     margin-left: 60px;
+  }
+}
+
+#group-create-body {
+  line-height: 1.6;
+}
+@media (min-width: 992px) {
+  #group-create-body .form-control {
+    width: 75%;
+  }
+}
+#group-create-body h4 {
+  font-size: 18px;
+  color: #66757f;
+  font-weight: 600;
+  margin: 20px 0 10px 0;
+}
+#group-create-body .btn {
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+#buddypress #invite-list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#buddypress #invite-list ul li {
+  margin-bottom: 5px;
+}
+
+#buddypress #group-create-body .left-menu, #buddypress .invite .left-menu {
+  margin-bottom: 20px;
+  margin-right: 20px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+@media (min-width: 992px) {
+  #buddypress #group-create-body .left-menu, #buddypress .invite .left-menu {
+    float: left;
+    width: 25%;
   }
 }
 

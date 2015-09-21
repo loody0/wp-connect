@@ -81,4 +81,54 @@
     }
 }
 
+#group-create-body{
+    line-height: 1.6;
+    .form-control{
+        @media(min-width: 992px){
+            width: 75%;
+        }
+    }
+    h4{
+        font-size: 18px;
+        color: $color_text-dark;
+        font-weight: 600;
+        margin: 20px 0 10px 0;
+    }
+    .btn{
+        margin-top: 20px;
+        margin-right: 10px;
+    }
+}
+
+#buddypress{
+    #invite-list{
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li{
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+#buddypress{
+    #group-create-body, .invite{
+        .left-menu{
+            margin-bottom: 20px;
+            margin-right: 20px;
+            padding: 15px;
+            background-color: rgba(0,0,0,0.03);
+            @media(min-width: 992px){
+                float: left;
+                width: 25%;
+            }
+        }
+        .main-column{
+
+        }
+    }
+}
+
 @import "group-single";

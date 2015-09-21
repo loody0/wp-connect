@@ -81,7 +81,7 @@
                     }
                 }
                 &:last-child{
-                    a:after{
+                    a:after, span:after{
                         border-right: none;
                     }
                 }
