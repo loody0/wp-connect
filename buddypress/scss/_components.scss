@@ -1,6 +1,6 @@
 // dir search
 #buddypress{
-    .dir-search{
+    .dir-search, .groups-members-search{
         margin-bottom: 30px;
         .input-group{
             .form-control{
@@ -143,6 +143,13 @@
             position: relative;
             top: auto;
             right: auto;
+        }
+        &.connect-order-select-wrap-md{
+            @media(max-width: 992px){
+                position: relative;
+                top: auto;
+                right: auto;
+            }
         }
         .connect-order-select{
             width: auto;

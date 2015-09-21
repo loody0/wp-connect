@@ -1,5 +1,4 @@
 <?php
-
 /**
  * buddypress functions
  * 
@@ -143,3 +142,75 @@ function connect_bp_send_message_button( $button ) {
 add_filter( 'bp_get_send_public_message_button', 'connect_bp_send_message_button' );
 add_filter( 'bp_get_send_message_button_args', 'connect_bp_send_message_button' );
 
+/**
+ * Custom Output the Group members template
+ *
+ * @return string html output
+ */
+function connect_bp_groups_members_template_part() {
+    ?>
+    <div class="item-list-tabs" id="subnav" role="navigation">
+        <ul>
+            <li class="groups-members-search" role="search">
+                <?php bp_directory_members_search_form(); ?>
+            </li>
+
+            <?php connect_bp_groups_members_filter(); ?>
+            <?php
+            /**
+             * Fires at the end of the group members search unordered list.
+             *
+             * Part of bp_groups_members_template_part().
+             *
+             * @since BuddyPress (1.5.0)
+             */
+            do_action( 'bp_members_directory_member_sub_types' );
+            ?>
+
+        </ul>
+    </div>
+
+    <div id="members-group-list" class="group_members dir-list">
+
+        <?php bp_get_template_part( 'groups/single/members' ); ?>
+
+    </div>
+    <?php
+}
+
+/**
+ * Custom Output the Group members filters
+ *
+ * @return string html output
+ */
+function connect_bp_groups_members_filter() {
+    ?>
+    <li id="group_members-order-select" class="last filter">
+        <div class="connect-order-select-wrap">
+
+            <select id="group_members-order-by" class="form-control connect-order-select">
+                <option value="last_joined"><?php _e( 'Newest', 'buddypress' ); ?></option>
+                <option value="first_joined"><?php _e( 'Oldest', 'buddypress' ); ?></option>
+
+                <?php if ( bp_is_active( 'activity' ) ) : ?>
+                    <option value="group_activity"><?php _e( 'Group Activity', 'buddypress' ); ?></option>
+                <?php endif; ?>
+
+                <option value="alphabetical"><?php _e( 'Alphabetical', 'buddypress' ); ?></option>
+
+                <?php
+                /**
+                 * Fires at the end of the Group members filters select input.
+                 *
+                 * Useful for plugins to add more filter options.
+                 *
+                 * @since BuddyPress (2.0.0)
+                 */
+                do_action( 'bp_groups_members_order_options' );
+                ?>
+
+            </select>
+        </div>
+    </li>
+    <?php
+}

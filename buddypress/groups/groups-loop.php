@@ -37,49 +37,47 @@ do_action( 'bp_before_groups_loop' );
             <li <?php bp_group_class( array( 'col-lg-6' ) ); ?>>
                 <div class="panel panel-default group-panel">
                     <?php if ( !bp_disable_group_avatar_uploads() ) : ?>
-                        <div class="media">
-                            <div class="item-avatar media-left">
-                                <a href="<?php bp_group_permalink(); ?>"><?php bp_group_avatar( 'type=thumb&width=150&height=150' ); ?></a>
-                            </div>
-                        <?php endif; ?>
-                        <div class="media-body">
-                            <div class="panel-body">
 
-                                <div class="item">
+                        <div class="item-avatar">
+                            <a href="<?php bp_group_permalink(); ?>"><?php bp_group_avatar( 'type=thumb&width=150&height=150' ); ?></a>
+                        </div>
+                    <?php endif; ?>
+                    <div class="panel-body">
 
-                                    <div class="meta"><?php bp_group_type(); ?> / <?php bp_group_member_count(); ?></div>
+                        <div class="item">
 
-                                    <div class="item-title"><a href="<?php bp_group_permalink(); ?>"><?php bp_group_name(); ?></a></div>
+                            <div class="meta"><?php bp_group_type(); ?> / <?php bp_group_member_count(); ?></div>
 
-                                    <div class="item-desc"><?php bp_group_description_excerpt(); ?></div>
+                            <div class="item-title"><a href="<?php bp_group_permalink(); ?>"><?php bp_group_name(); ?></a></div>
 
-                                    <?php
-                                    /**
-                                     * Fires inside the listing of an individual group listing item.
-                                     *
-                                     * @since BuddyPress (1.1.0)
-                                     */
-                                    do_action( 'bp_directory_groups_item' );
-                                    ?>
+                            <div class="item-desc"><?php bp_group_description_excerpt(); ?></div>
 
-                                </div>
-                                <div class="action">
+                            <?php
+                            /**
+                             * Fires inside the listing of an individual group listing item.
+                             *
+                             * @since BuddyPress (1.1.0)
+                             */
+                            do_action( 'bp_directory_groups_item' );
+                            ?>
 
-                                    <div class="item-meta"><span class="activity"><?php printf( __( 'active %s', 'buddypress' ), bp_get_group_last_active() ); ?></span></div>
+                        </div>
+                        <div class="action">
 
-                                    <?php
-                                    /**
-                                     * Fires inside the action section of an individual group listing item.
-                                     *
-                                     * @since BuddyPress (1.1.0)
-                                     */
-                                    do_action( 'bp_directory_groups_actions' );
-                                    ?>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
+                            <div class="item-meta"><span class="activity"><?php printf( __( 'active %s', 'buddypress' ), bp_get_group_last_active() ); ?></span></div>
+
+                            <?php
+                            /**
+                             * Fires inside the action section of an individual group listing item.
+                             *
+                             * @since BuddyPress (1.1.0)
+                             */
+                            do_action( 'bp_directory_groups_actions' );
+                            ?>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
+                    <div class="clearfix"></div>
                 </div>
             </li>
             <?php

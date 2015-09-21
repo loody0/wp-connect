@@ -14,8 +14,15 @@
             }
         }
         .item-avatar{
-            text-align: center;
             padding: 5px;
+            @media(min-width: 500px){
+                float: left;
+            }
+        }
+        .panel-body{
+            @media(min-width: 500px){
+                margin-left: 155px;
+            }
         }
         .meta{
             margin-bottom: 5px;

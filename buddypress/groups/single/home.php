@@ -1,146 +1,146 @@
 <div id="buddypress">
 
-	<?php if ( bp_has_groups() ) : while ( bp_groups() ) : bp_the_group(); ?>
+    <?php if ( bp_has_groups() ) : while ( bp_groups() ) : bp_the_group(); ?>
 
-	<?php
+            <?php
+            /**
+             * Fires before the display of the group home content.
+             *
+             * @since BuddyPress (1.2.0)
+             */
+            do_action( 'bp_before_group_home_content' );
+            ?>
 
-	/**
-	 * Fires before the display of the group home content.
-	 *
-	 * @since BuddyPress (1.2.0)
-	 */
-	do_action( 'bp_before_group_home_content' ); ?>
+            <div id="item-header" role="complementary">
 
-	<div id="item-header" role="complementary">
+                <?php bp_get_template_part( 'groups/single/group-header' ); ?>
 
-		<?php bp_get_template_part( 'groups/single/group-header' ); ?>
+            </div><!-- #item-header -->
+            <div style="position: relative;">
+                <div id="item-nav">
+                    <div class="item-list-tabs connect-item-list-tabs no-ajax" id="object-nav" role="navigation">
+                        <ul>
 
-	</div><!-- #item-header -->
+                            <?php bp_get_options_nav(); ?>
 
-	<div id="item-nav">
-		<div class="item-list-tabs connect-item-list-tabs no-ajax" id="object-nav" role="navigation">
-			<ul>
+                            <?php
+                            /**
+                             * Fires after the display of group options navigation.
+                             *
+                             * @since BuddyPress (1.2.0)
+                             */
+                            do_action( 'bp_group_options_nav' );
+                            ?>
 
-				<?php bp_get_options_nav(); ?>
+                        </ul>
+                    </div>
+                </div><!-- #item-nav -->
 
-				<?php
+                <div id="item-body">
 
-				/**
-				 * Fires after the display of group options navigation.
-				 *
-				 * @since BuddyPress (1.2.0)
-				 */
-				do_action( 'bp_group_options_nav' ); ?>
+                    <?php
+                    /**
+                     * Fires before the display of the group home body.
+                     *
+                     * @since BuddyPress (1.2.0)
+                     */
+                    do_action( 'bp_before_group_body' );
 
-			</ul>
-		</div>
-	</div><!-- #item-nav -->
+                    /**
+                     * Does this next bit look familiar? If not, go check out WordPress's
+                     * /wp-includes/template-loader.php file.
+                     *
+                     * @todo A real template hierarchy? Gasp!
+                     */
+                    // Looking at home location
+                    if ( bp_is_group_home() ) :
 
-	<div id="item-body">
+                        if ( bp_group_is_visible() ) {
 
-		<?php
+                            // Use custom front if one exists
+                            $custom_front = bp_locate_template( array( 'groups/single/front.php' ), false, true );
+                            if ( !empty( $custom_front ) ) : load_template( $custom_front, true );
 
-		/**
-		 * Fires before the display of the group home body.
-		 *
-		 * @since BuddyPress (1.2.0)
-		 */
-		do_action( 'bp_before_group_body' );
+                            // Default to activity
+                            elseif ( bp_is_active( 'activity' ) ) : bp_get_template_part( 'groups/single/activity' );
 
-		/**
-		 * Does this next bit look familiar? If not, go check out WordPress's
-		 * /wp-includes/template-loader.php file.
-		 *
-		 * @todo A real template hierarchy? Gasp!
-		 */
+                            // Otherwise show members
+                            elseif ( bp_is_active( 'members' ) ) : bp_groups_members_template_part();
 
-			// Looking at home location
-			if ( bp_is_group_home() ) :
+                            endif;
+                        } else {
 
-				if ( bp_group_is_visible() ) {
+                            /**
+                             * Fires before the display of the group status message.
+                             *
+                             * @since BuddyPress (1.1.0)
+                             */
+                            do_action( 'bp_before_group_status_message' );
+                            ?>
 
-					// Use custom front if one exists
-					$custom_front = bp_locate_template( array( 'groups/single/front.php' ), false, true );
-					if     ( ! empty( $custom_front   ) ) : load_template( $custom_front, true );
+                            <div id="message" class="info">
+                                <p><?php bp_group_status_message(); ?></p>
+                            </div>
 
-					// Default to activity
-					elseif ( bp_is_active( 'activity' ) ) : bp_get_template_part( 'groups/single/activity' );
+                            <?php
+                            /**
+                             * Fires after the display of the group status message.
+                             *
+                             * @since BuddyPress (1.1.0)
+                             */
+                            do_action( 'bp_after_group_status_message' );
+                        }
 
-					// Otherwise show members
-					elseif ( bp_is_active( 'members'  ) ) : bp_groups_members_template_part();
+                    // Not looking at home
+                    else :
 
-					endif;
+                        // Group Admin
+                        if ( bp_is_group_admin_page() ) : bp_get_template_part( 'groups/single/admin' );
 
-				} else {
+                        // Group Activity
+                        elseif ( bp_is_group_activity() ) : bp_get_template_part( 'groups/single/activity' );
 
-					/**
-					 * Fires before the display of the group status message.
-					 *
-					 * @since BuddyPress (1.1.0)
-					 */
-					do_action( 'bp_before_group_status_message' ); ?>
+                        // Group Members
+                        elseif ( bp_is_group_members() ) : connect_bp_groups_members_template_part();
 
-					<div id="message" class="info">
-						<p><?php bp_group_status_message(); ?></p>
-					</div>
+                        // Group Invitations
+                        elseif ( bp_is_group_invites() ) : bp_get_template_part( 'groups/single/send-invites' );
 
-					<?php
+                        // Old group forums
+                        elseif ( bp_is_group_forum() ) : bp_get_template_part( 'groups/single/forum' );
 
-					/**
-					 * Fires after the display of the group status message.
-					 *
-					 * @since BuddyPress (1.1.0)
-					 */
-					do_action( 'bp_after_group_status_message' );
+                        // Membership request
+                        elseif ( bp_is_group_membership_request() ) : bp_get_template_part( 'groups/single/request-membership' );
 
-				}
+                        // Anything else (plugins mostly)
+                        else : bp_get_template_part( 'groups/single/plugins' );
 
-			// Not looking at home
-			else :
+                        endif;
 
-				// Group Admin
-				if     ( bp_is_group_admin_page() ) : bp_get_template_part( 'groups/single/admin'        );
+                    endif;
 
-				// Group Activity
-				elseif ( bp_is_group_activity()   ) : bp_get_template_part( 'groups/single/activity'     );
+                    /**
+                     * Fires after the display of the group home body.
+                     *
+                     * @since BuddyPress (1.2.0)
+                     */
+                    do_action( 'bp_after_group_body' );
+                    ?>
 
-				// Group Members
-				elseif ( bp_is_group_members()    ) : bp_groups_members_template_part();
+                </div><!-- #item-body -->
+            </div>
 
-				// Group Invitations
-				elseif ( bp_is_group_invites()    ) : bp_get_template_part( 'groups/single/send-invites' );
+            <?php
+            /**
+             * Fires after the display of the group home content.
+             *
+             * @since BuddyPress (1.2.0)
+             */
+            do_action( 'bp_after_group_home_content' );
+            ?>
 
-				// Old group forums
-				elseif ( bp_is_group_forum()      ) : bp_get_template_part( 'groups/single/forum'        );
-
-				// Membership request
-				elseif ( bp_is_group_membership_request() ) : bp_get_template_part( 'groups/single/request-membership' );
-
-				// Anything else (plugins mostly)
-				else                                : bp_get_template_part( 'groups/single/plugins'      );
-
-				endif;
-
-			endif;
-
-		/**
-		 * Fires after the display of the group home body.
-		 *
-		 * @since BuddyPress (1.2.0)
-		 */
-		do_action( 'bp_after_group_body' ); ?>
-
-	</div><!-- #item-body -->
-
-	<?php
-
-	/**
-	 * Fires after the display of the group home content.
-	 *
-	 * @since BuddyPress (1.2.0)
-	 */
-	do_action( 'bp_after_group_home_content' ); ?>
-
-	<?php endwhile; endif; ?>
+        <?php endwhile;
+    endif;
+    ?>
 
 </div><!-- #buddypress -->
