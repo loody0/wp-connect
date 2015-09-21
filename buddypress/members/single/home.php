@@ -1,3 +1,9 @@
+<?php 
+if ( bp_is_user_messages() ){
+    bp_get_template_part( 'members/single/messages' );
+    return;
+}
+?>
 <div id="buddypress">
 
     <?php

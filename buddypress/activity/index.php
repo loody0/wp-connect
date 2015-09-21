@@ -1,7 +1,10 @@
 <?php
 /**
  * Fires before the activity directory listing.
- *
+ * 
+ * @package Connect
+ * @subpackage buddypress
+ * 
  * @since BuddyPress (1.5.0)
  */
 do_action( 'bp_before_directory_activity' );

@@ -312,6 +312,7 @@
     margin-bottom: 15px;
     padding: 10px;
     border: solid 1px transparent;
+    @include border-radius(4px);
     p{
         margin: 0;
     }

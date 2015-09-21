@@ -1,7 +1,10 @@
 <?php
 /**
  * Fires at the top of the groups creation template file.
- *
+ * 
+ * @package Connect
+ * @subpackage buddypress
+ * 
  * @since BuddyPress (1.7.0)
  */
 do_action( 'bp_before_create_group_page' );

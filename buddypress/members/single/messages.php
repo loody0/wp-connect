@@ -3,12 +3,15 @@
 /**
  * BuddyPress - Users Messages
  *
- * @package BuddyPress
- * @subpackage bp-legacy
+ * @package Connect
+ * @subpackage buddypress
  */
 
 ?>
-
+<?php 
+echo '<div class="well">under construction</div>';
+return;
+?>
 <div class="item-list-tabs no-ajax" id="subnav" role="navigation">
 	<ul>
 

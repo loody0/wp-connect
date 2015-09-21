@@ -1,7 +1,10 @@
 <?php
 /**
  * Fires before the start of the activity loop.
- *
+ * 
+ * @package Connect
+ * @subpackage buddypress
+ * 
  * @since BuddyPress (1.2.0)
  */
 do_action( 'bp_before_activity_loop' );

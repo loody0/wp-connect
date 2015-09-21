@@ -2,8 +2,8 @@
 /**
  * BuddyPress - Users Friends
  *
- * @package BuddyPress
- * @subpackage bp-legacy
+ * @package Connect
+ * @subpackage buddypress
  */
 ?>
 

@@ -3,8 +3,8 @@
 /**
  * BuddyPress - Users Settings
  *
- * @package BuddyPress
- * @subpackage bp-legacy
+ * @package Connect
+ * @subpackage buddypress
  */
 
 ?>

@@ -3,8 +3,8 @@
 /**
  * BuddyPress - Users Notifications
  *
- * @package BuddyPress
- * @subpackage bp-legacy
+ * @package Connect
+ * @subpackage buddypress
  */
 
 ?>
