@@ -67,11 +67,6 @@
             label{
                 display: block;
             }
-            .form-control{
-                @media(min-width: 992px){
-                    width: 75%;
-                }
-            }
             .field-inline-block{
                 display: inline-block;
                 width: auto;

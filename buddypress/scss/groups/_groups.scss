@@ -81,13 +81,8 @@
     }
 }
 
-#group-create-body{
+#group-create-body, #group-settings-form{
     line-height: 1.6;
-    .form-control{
-        @media(min-width: 992px){
-            width: 75%;
-        }
-    }
     h4{
         font-size: 18px;
         color: $color_text-dark;
@@ -95,7 +90,7 @@
         margin: 20px 0 10px 0;
     }
     .btn{
-        margin-top: 20px;
+        margin-top: 10px;
         margin-right: 10px;
     }
 }

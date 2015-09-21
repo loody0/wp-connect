@@ -41,3 +41,35 @@
         }
     }
 }
+
+#buddypress{
+    .manage-members{
+        h5{
+            margin: 0;
+            @media(min-width: 400px){
+                margin-left: 40px;
+            }
+            a{
+                color: $color_text-dark;
+                font-weight: 600;
+                &:hover, &:focus, &:active{
+                    color: $color_link-main;
+                }
+            }
+            span{
+                display: block;
+                margin-top: 5px;
+                a{
+                    display: inline-block;
+                    margin-top: 5px;
+                    padding: 5px;
+                    border: solid 1px $color_line;
+                    color: $color_link-main;
+                    &:hover, &:active, &:focus{
+                        background-color: #EEE;
+                    }
+                }
+            }
+        }
+    }
+}

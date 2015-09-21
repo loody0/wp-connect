@@ -272,3 +272,13 @@
         }
     }
 }
+
+#buddypress{
+    .standard-form{
+        .form-control{
+            @media(min-width: 992px){
+                width: 75%;
+            }
+        }
+    }
+}

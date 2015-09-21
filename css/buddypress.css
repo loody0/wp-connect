@@ -306,6 +306,12 @@
   border-color: #8dff1c;
 }
 
+@media (min-width: 992px) {
+  #buddypress .standard-form .form-control {
+    width: 75%;
+  }
+}
+
 #buddypress .dir-list.members ul.item-list {
   margin: 0;
   padding: 0;
@@ -478,11 +484,6 @@
 #buddypress .profile .form-group label {
   display: block;
 }
-@media (min-width: 992px) {
-  #buddypress .profile .form-group .form-control {
-    width: 75%;
-  }
-}
 #buddypress .profile .form-group .field-inline-block {
   display: inline-block;
   width: auto;
@@ -639,22 +640,17 @@
   }
 }
 
-#group-create-body {
+#group-create-body, #group-settings-form {
   line-height: 1.6;
 }
-@media (min-width: 992px) {
-  #group-create-body .form-control {
-    width: 75%;
-  }
-}
-#group-create-body h4 {
+#group-create-body h4, #group-settings-form h4 {
   font-size: 18px;
   color: #66757f;
   font-weight: 600;
   margin: 20px 0 10px 0;
 }
-#group-create-body .btn {
-  margin-top: 20px;
+#group-create-body .btn, #group-settings-form .btn {
+  margin-top: 10px;
   margin-right: 10px;
 }
 
@@ -723,6 +719,36 @@
 #buddypress #item-header #group-admins li img {
   width: 40px;
   height: 40px;
+}
+
+#buddypress .manage-members h5 {
+  margin: 0;
+}
+@media (min-width: 400px) {
+  #buddypress .manage-members h5 {
+    margin-left: 40px;
+  }
+}
+#buddypress .manage-members h5 a {
+  color: #66757f;
+  font-weight: 600;
+}
+#buddypress .manage-members h5 a:hover, #buddypress .manage-members h5 a:focus, #buddypress .manage-members h5 a:active {
+  color: #ef4837;
+}
+#buddypress .manage-members h5 span {
+  display: block;
+  margin-top: 5px;
+}
+#buddypress .manage-members h5 span a {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 5px;
+  border: solid 1px #d8dcde;
+  color: #ef4837;
+}
+#buddypress .manage-members h5 span a:hover, #buddypress .manage-members h5 span a:active, #buddypress .manage-members h5 span a:focus {
+  background-color: #EEE;
 }
 
 .buddypress .bp_activity .entry-header .entry-title {
