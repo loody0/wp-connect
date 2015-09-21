@@ -62,4 +62,23 @@
     }
 }
 
+#buddypress{
+    .groups-invites{
+        h4{
+            margin-top: 0;
+            font-size: 14px;
+            font-weight: 600;
+            @media(min-width: 400px){
+                margin-left: 60px;
+            }
+        }
+        p.desc{
+            font-size: 13px;
+            @media(min-width: 400px){
+                margin-left: 60px;
+            }
+        }
+    }
+}
+
 @import "group-single";

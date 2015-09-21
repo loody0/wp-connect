@@ -94,7 +94,7 @@ do_action( 'bp_before_member_friend_requests_content' );
 
 <?php else: ?>
 
-    <div id="message" class="info">
+    <div id="message" class="info alert alert-info">
         <p><?php _e( 'You have no pending friendship requests.', 'buddypress' ); ?></p>
     </div>
 
