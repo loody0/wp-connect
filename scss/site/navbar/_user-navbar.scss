@@ -4,12 +4,14 @@
         >a{
             padding-top: 18px;
             padding-bottom: 18px;
+            .username{
+                margin-left: 5px;
+            }
         }
         img.avatar{
             width: 42px;
             height: 42px;
             margin: 0;
-            margin-right: 10px;
             @include border-radius(50%);
         }
         >.dropdown-menu{
@@ -47,7 +49,7 @@
                         }
                     }
                     display: none;
-                    padding: 5px 0;
+                    padding: 0;
                     list-style: none;
                     line-height: 20px;
                     position: absolute;

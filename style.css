@@ -281,6 +281,29 @@ th {
   margin-left: 20px;
 }
 
+.badge-wrap {
+  position: relative;
+}
+.badge-wrap.badge-wrap-inline {
+  display: inline-block;
+}
+.badge-wrap .badge {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+}
+
+.site-navbar .badge {
+  background-color: #ef4837;
+  font-weight: 600;
+}
+.site-navbar .badge-border {
+  border: solid 2px #FFF;
+}
+.site-navbar .badge-empty {
+  padding: 1px 5px;
+}
+
 .wow-animated, .animated {
   -webkit-animation-duration: 0.4s;
   -moz-animation-duration: 0.4s;
@@ -1104,21 +1127,19 @@ body.side-opened .page-wrap {
     right: 0;
     width: 250px;
     padding: 10px;
-    padding-top: 15px;
+    padding-top: 20px;
   }
 }
 @media (min-width: 992px) {
   .site-sidebar {
     width: 350px;
-    padding: 15px;
-    padding-top: 15px;
+    padding: 20px;
   }
 }
 @media (min-width: 1560px) {
   .site-sidebar {
     width: 450px;
-    padding: 20px;
-    padding-top: 15px;
+    padding: 25px;
   }
 }
 
@@ -1378,10 +1399,6 @@ a img.aligncenter {
   }
 }
 
-.site-content {
-  margin-bottom: 40px;
-}
-
 .page-title, .entry-title {
   margin-top: 0;
   margin-bottom: 25px;
@@ -1627,11 +1644,13 @@ a img.aligncenter {
   padding-top: 18px;
   padding-bottom: 18px;
 }
+.navbar-nav > li.nav-user-dropdown > a .username {
+  margin-left: 5px;
+}
 .navbar-nav > li.nav-user-dropdown img.avatar {
   width: 42px;
   height: 42px;
   margin: 0;
-  margin-right: 10px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -1678,7 +1697,7 @@ a img.aligncenter {
 }
 .navbar-nav > li.nav-user-dropdown > .dropdown-menu > li > ul.dropdown-submenu {
   display: none;
-  padding: 5px 0;
+  padding: 0;
   list-style: none;
   line-height: 20px;
   position: absolute;

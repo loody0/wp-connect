@@ -21,25 +21,41 @@ function connect_login_register_nav() {
  * get user navbar dropdown
  */
 function connect_user_nav() {
-    
-    if ( !is_user_logged_in() ) return;
-    
+
+    if( !is_user_logged_in() ) return;
+
     $my_avatar = bp_core_fetch_avatar( array( 'item_id' => bp_loggedin_user_id(), 'type' => 'thumb' ) );
     $my_name = bp_core_get_username( bp_loggedin_user_id() );
 
+    $count_notif = bp_notifications_get_unread_notification_count( bp_loggedin_user_id() );
+    //$count_messages = bp_get_total_unread_messages_count();
+    $count_total = $count_notif; //+ $count_messages;
+
+    $badge = '<span class="badge badge-border badge-empty">&nbsp;</span>';
+
     echo '<li class="nav-user-dropdown">';
-    echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $my_avatar . '<span class="username">' . $my_name . '</span> <span class="caret"></span></a>';
+    echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' .
+    '<span class="badge-wrap badge-wrap-inline">' . $my_avatar . $badge . '</span> <span class="username">' .
+    $my_name . '</span> <span class="caret"></span></a>';
 
     echo '<ul class="dropdown-menu animated fadeInRight">';
     $menu = connect_get_user_options_nav();
 
-    foreach ( $menu as $top ) {
-        echo '<li><a href="' . $top[ 'link' ] . '">' . $top[ 'name' ] . '</a>';
+    foreach( $menu as $top ) {
+        echo '<li><a href="' . $top[ 'link' ] . '">' . $top[ 'name' ];
+        if( $top[ 'count' ] > 0 ) {
+            echo '<div class="badge pull-right">' . $top[ 'count' ] . '</div>';
+        }
+        echo '</a>';
 
-        if ( $top[ 'submenu' ] ) {
+        if( $top[ 'submenu' ] ) {
             echo '<ul class="dropdown-submenu animated fadeInRight">';
-            foreach ( $top[ 'submenu' ] as $sub ) {
-                echo '<li><a href="' . $sub[ 'link' ] . '">' . $sub[ 'name' ] . '</a></li>';
+            foreach( $top[ 'submenu' ] as $sub ) {
+                echo '<li><a href="' . $sub[ 'link' ] . '">' . $sub[ 'name' ];
+                if( $sub[ 'count' ] > 0 ) {
+                    echo '<div class="badge pull-right">' . $top[ 'count' ] . '</div>';
+                }
+                echo '</a></li>';
             }
             echo '</ul>';
         }
@@ -63,22 +79,31 @@ function connect_get_user_options_nav() {
 
     $menu = array();
 
-    foreach ( $nav as $top => $subs ) {
+    foreach( $nav as $top => $subs ) {
         $submenu = array();
         $top_link = "#";
         $i = 0;
-        foreach ( $subs as $sub ) {
-            if ( $i == 0 ) $top_link = $sub[ 'link' ];
+        $count_top = 0;
+        foreach( $subs as $sub ) {
+            if( $i == 0 ) $top_link = $sub[ 'link' ];
             $i++;
+            $count = 0;
+            if( 'unread' == $sub[ 'slug' ] || 'inbox' == $sub[ 'slug' ]  ) {
+                $count = bp_notifications_get_unread_notification_count( bp_loggedin_user_id() );
+                $count_top = $count_top + $count;
+            }
             array_push( $submenu, array(
                 'name' => $sub[ 'name' ],
                 'link' => $sub[ 'link' ],
+                'slug' => $sub[ 'slug' ],
+                'count' => $count
             ) );
         }
         $topmenu = array(
             'name' => $top,
             'link' => $top_link,
-            'submenu' => $submenu
+            'submenu' => $submenu,
+            'count' => $count_top
         );
         array_push( $menu, $topmenu );
     }
