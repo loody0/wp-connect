@@ -34,14 +34,17 @@
         right: 0;
         width: 250px;
         padding: 10px;
+        padding-top: 15px;
     }
     @media(min-width: 992px){
         width: 350px;
         padding: 15px;
+        padding-top: 15px;
     }
     @media(min-width: 1560px){
         width: 450px;
         padding: 20px;
+        padding-top: 15px;
         
     }
 }

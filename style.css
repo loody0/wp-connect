@@ -778,18 +778,21 @@ body.side-opened .page-wrap {
     right: 0;
     width: 250px;
     padding: 10px;
+    padding-top: 15px;
   }
 }
 @media (min-width: 992px) {
   .site-sidebar {
     width: 350px;
     padding: 15px;
+    padding-top: 15px;
   }
 }
 @media (min-width: 1560px) {
   .site-sidebar {
     width: 450px;
     padding: 20px;
+    padding-top: 15px;
   }
 }
 

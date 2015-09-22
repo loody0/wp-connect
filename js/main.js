@@ -309,10 +309,12 @@
                     } );
         }
 
-        $( ".site-sidebar" ).stick_in_parent( {
-            parent: ".site-main",
-            offset_top: 80
-        } );
+        if ( $( "#site-content" ).height() > $( "#site-sidebar" ).height() ) {
+            $( "#site-sidebar" ).stick_in_parent( {
+                parent: "#site-main",
+                offset_top: 80
+            } );
+        }
         $( window ).on( "resize", ( function( _this ) {
             return function( e ) {
                 return $( document.body ).trigger( "sticky_kit:recalc" );

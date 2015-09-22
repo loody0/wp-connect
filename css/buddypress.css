@@ -875,7 +875,7 @@
 #buddypress .activity-item {
   margin-bottom: 20px;
 }
-#buddypress .activity-item:hover .activity-meta .delete-activity {
+#buddypress .activity-item:hover .activity-meta .delete-activity, #buddypress .activity-item:hover .activity-meta .delete-activity-single {
   display: block;
 }
 #buddypress .activity-item .activity-panel {
@@ -941,7 +941,7 @@
   color: #66757f;
   margin-right: 5px;
 }
-#buddypress .activity-item .activity-meta .delete-activity {
+#buddypress .activity-item .activity-meta .delete-activity, #buddypress .activity-item .activity-meta .delete-activity-single {
   font-size: 0;
   position: absolute;
   top: 15px;
@@ -949,14 +949,14 @@
   color: #a1a1a1;
 }
 @media (min-width: 768px) {
-  #buddypress .activity-item .activity-meta .delete-activity {
+  #buddypress .activity-item .activity-meta .delete-activity, #buddypress .activity-item .activity-meta .delete-activity-single {
     display: none;
   }
 }
-#buddypress .activity-item .activity-meta .delete-activity:hover, #buddypress .activity-item .activity-meta .delete-activity:active, #buddypress .activity-item .activity-meta .delete-activity:focus {
+#buddypress .activity-item .activity-meta .delete-activity:hover, #buddypress .activity-item .activity-meta .delete-activity:active, #buddypress .activity-item .activity-meta .delete-activity:focus, #buddypress .activity-item .activity-meta .delete-activity-single:hover, #buddypress .activity-item .activity-meta .delete-activity-single:active, #buddypress .activity-item .activity-meta .delete-activity-single:focus {
   color: #ef4837;
 }
-#buddypress .activity-item .activity-meta .delete-activity:after {
+#buddypress .activity-item .activity-meta .delete-activity:after, #buddypress .activity-item .activity-meta .delete-activity-single:after {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;

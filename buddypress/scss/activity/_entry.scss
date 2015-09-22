@@ -7,8 +7,10 @@
     .activity-item{
         margin-bottom: 20px;
         &:hover{
-            .activity-meta .delete-activity{
-                display: block;
+            .activity-meta{
+                .delete-activity, .delete-activity-single{
+                    display: block;
+                }
             }
         }
         .activity-panel{
@@ -71,7 +73,7 @@
                 color: $color_text-dark;
                 margin-right: 5px;
             }
-            .delete-activity{
+            .delete-activity, .delete-activity-single{
                 @media(min-width: 768px){
                     display: none;
                 }
