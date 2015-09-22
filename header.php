@@ -34,7 +34,7 @@
         <div class="site-page">
             <?php get_template_part( 'template-parts/side-menu' ); ?>
             <?php get_template_part( 'template-parts/side-left' ); ?>
-            <div class="page-wrap navbar-fixed">
+            <div class="page-wrap">
                 <div class="page-overlay"></div>
 
                 <header class="site-header" id="site-header">

@@ -34,3 +34,36 @@
         }
     }
 }
+
+.buddypress.widget{
+    h2.widget-title{
+        display: inline-block;
+    }
+    .item-options{
+        float: right;
+        margin-left: 15px;
+        margin-bottom: 15px;
+        &:after{
+            clear: both;
+            content: '';
+            display: table;
+        }
+    }
+    .item-list{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li{
+            float: left;
+            margin: 0 10px 10px 0;
+            >.item{
+                display: none;
+            }
+        }
+        &:after{
+            clear: both;
+            content: '';
+            display: table;
+        }
+    }
+}

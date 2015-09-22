@@ -63,6 +63,7 @@ function connect_scripts() {
     wp_enqueue_style( 'font-awesome', CONNECT_URI_LIB . '/font-awesome/css/font-awesome.min.css' );
 
     wp_enqueue_script( 'modernizr', CONNECT_URI . '/js/modernizr.js', false, false, true );
+    wp_enqueue_script( 'stiky-kit', CONNECT_URI . '/js/jquery.sticky-kit.min.js', false, false, true );
     wp_enqueue_script( 'wow', CONNECT_URI . '/js/wow.min.js', false, false, true );
 
     // custom scroll

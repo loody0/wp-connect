@@ -735,39 +735,64 @@ body.side-opened .page-wrap {
 }
 
 .site-main {
-  padding: 25px 0;
+  position: relative;
 }
-@media (min-width: 998px) {
-  .site-main {
-    padding: 25px 10px;
+
+@media (min-width: 768px) {
+  .site-header {
+    height: 80px;
   }
 }
 
-.site-sidebar .sidebar-2 {
-  margin-top: -25px;
-  padding-top: 25px;
-  margin-left: -10px;
-  margin-right: -25px;
-  padding-left: 15px;
-  padding-right: 15px;
+.site-content {
+  padding: 15px;
+  display: block;
+}
+@media (min-width: 768px) {
+  .site-content {
+    margin-right: 250px;
+    padding: 15px;
+  }
+}
+@media (min-width: 992px) {
+  .site-content {
+    margin-right: 350px;
+    padding: 20px;
+  }
+}
+@media (min-width: 1560px) {
+  .site-content {
+    margin-right: 450px;
+    padding: 30px;
+  }
+}
+
+.site-sidebar {
   background-color: #FFF;
-  min-height: 100vh;
+  display: none;
 }
-@media (max-width: 767px) {
-  .site-sidebar .sidebar-2 {
-    display: none;
+@media (min-width: 768px) {
+  .site-sidebar {
+    position: absolute;
+    display: block;
+    right: 0;
+    width: 250px;
+    padding: 10px;
+  }
+}
+@media (min-width: 992px) {
+  .site-sidebar {
+    width: 350px;
+    padding: 15px;
+  }
+}
+@media (min-width: 1560px) {
+  .site-sidebar {
+    width: 450px;
+    padding: 20px;
   }
 }
 
-@media (min-width: 1580px) {
-  .col-main {
-    width: 60%;
-  }
-
-  .col-side {
-    width: 40%;
-  }
-}
 body {
   background-color: #f7f7f7;
   /*font-family: 'Open Sans', sans-serif;*/
@@ -902,15 +927,6 @@ a img.aligncenter {
 
 .bypostauthor {
   display: block;
-}
-
-.page-wrap.navbar-fixed {
-  padding-top: 0;
-}
-@media (min-width: 768px) {
-  .page-wrap.navbar-fixed {
-    padding-top: 80px;
-  }
 }
 
 .site-navbar {
@@ -1235,6 +1251,37 @@ a img.aligncenter {
   font-size: 12px;
   display: block;
   color: #a1a1a1;
+}
+
+.buddypress.widget h2.widget-title {
+  display: inline-block;
+}
+.buddypress.widget .item-options {
+  float: right;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+.buddypress.widget .item-options:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+.buddypress.widget .item-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.buddypress.widget .item-list li {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+.buddypress.widget .item-list li > .item {
+  display: none;
+}
+.buddypress.widget .item-list:after {
+  clear: both;
+  content: '';
+  display: table;
 }
 
 /*# sourceMappingURL=style.css.map */

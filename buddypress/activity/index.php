@@ -9,7 +9,10 @@
  */
 do_action( 'bp_before_directory_activity' );
 ?>
-
+<?php
+//global $bp; 
+//var_dump( $bp->bp_options_nav );
+?>
 <div id="buddypress">
 
     <div class="item-list-tabs activity-type-tabs connect-item-list-tabs" role="navigation">
@@ -153,7 +156,7 @@ do_action( 'bp_before_directory_activity' );
      */
     do_action( 'bp_before_directory_activity_content' );
     ?>
-    
+
     <?php
     /**
      * Fires towards the top of template pages for notice display.
@@ -162,21 +165,18 @@ do_action( 'bp_before_directory_activity' );
      */
     do_action( 'template_notices' );
     ?>
-    
-    <div class="row">
-        <div class="col-md-12">
-            
-            <?php if ( is_user_logged_in() ) : ?>
-
-                <?php bp_get_template_part( 'activity/post-form' ); ?>
-
-            <?php endif; ?>
-            
-        </div>
-    </div>
 
 
-    
+
+    <?php if ( is_user_logged_in() ) : ?>
+
+        <?php bp_get_template_part( 'activity/post-form' ); ?>
+
+    <?php endif; ?>
+
+
+
+
     <?php
     /**
      * Fires before the display of the activity list.

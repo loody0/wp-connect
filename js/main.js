@@ -309,6 +309,16 @@
                     } );
         }
 
+        $( ".site-sidebar" ).stick_in_parent( {
+            parent: ".site-main",
+            offset_top: 80
+        } );
+        $( window ).on( "resize", ( function( _this ) {
+            return function( e ) {
+                return $( document.body ).trigger( "sticky_kit:recalc" );
+            };
+        } )( this ) );
+
     } );
 
 }( jQuery ) );

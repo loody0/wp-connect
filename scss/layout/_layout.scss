@@ -2,32 +2,51 @@
 @import "responsive";
 
 .site-main{
-    padding: 25px 0;
-    @media(min-width: 998px){
-        padding: 25px 10px;
+    position: relative;
+}
+.site-header{
+    @media(min-width: 768px){
+        height: 80px;
+    }
+}
+.site-content{
+    padding: 15px;
+    display: block;
+    @media(min-width: 768px){
+        margin-right: 250px;
+        padding: 15px;
+    }
+    @media(min-width: 992px){
+        margin-right: 350px;
+        padding: 20px;
+    }
+    @media(min-width: 1560px){
+        margin-right: 450px;
+        padding: 30px;
     }
 }
 .site-sidebar{
-    .sidebar-2{
-        margin-top: -25px;
-        padding-top: 25px;
-        margin-left: -10px;
-        margin-right: -25px;
-        padding-left: 15px;
-        padding-right: 15px;
-        background-color: #FFF;
-        min-height: 100vh;
-        @media(max-width: 767px){
-            display: none;
-        }
+    background-color: #FFF;
+    display: none;
+    @media(min-width: 768px){
+        position: absolute;
+        display: block;
+        right: 0;
+        width: 250px;
+        padding: 10px;
+    }
+    @media(min-width: 992px){
+        width: 350px;
+        padding: 15px;
+    }
+    @media(min-width: 1560px){
+        width: 450px;
+        padding: 20px;
+        
     }
 }
 
-@media (min-width: 1580px) {
-    .col-main{
-        width: 60%;
-    }
-    .col-side{
-        width: 40%;
-    }
+.site-content{
+}
+.site-sidebar{
 }
