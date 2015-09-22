@@ -1,0 +1,231 @@
+.wow-animated, .animated {
+    -webkit-animation-duration: 0.4s;
+    -moz-animation-duration: 0.4s;
+    -o-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInRight {
+    from {
+        opacity: 0;
+        @include transform(translate3d(10%, 0, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@-moz-keyframes fadeInRight {
+    from {
+        opacity: 0;
+        @include transform(translate3d(10%, 0, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@-o-keyframes fadeInRight {
+    from {
+        opacity: 0;
+        @include transform(translate3d(10%, 0, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        @include transform(translate3d(10%, 0, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+
+.fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    -moz-animation-name: fadeInRight;
+    -o-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+
+@-webkit-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        @include transform(translate3d(0, -10%, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@-moz-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        @include transform(translate3d(0, -10%, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@-o-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        @include transform(translate3d(0, -10%, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        @include transform(translate3d(0, -10%, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    -moz-animation-name: fadeInDown;
+    -o-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        @include transform(translate3d(0, 10%, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@-moz-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        @include transform(translate3d(0, 10%, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@-o-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        @include transform(translate3d(0, 10%, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        @include transform(translate3d(0, 10%, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    -moz-animation-name: fadeInUp;
+    -o-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInUpLogin {
+    from {
+        opacity: 0;
+        @include transform(translate3d(0, 5%, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@-moz-keyframes fadeInUpLogin {
+    from {
+        opacity: 0;
+        @include transform(translate3d(0, 5%, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+@-o-keyframes fadeInUpLogin {
+    from {
+        opacity: 0;
+        @include transform(translate3d(0, 5%, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+@keyframes fadeInUpLogin {
+    from {
+        opacity: 0;
+        @include transform(translate3d(0, 5%, 0));
+    }
+    to {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+.fadeInUpLogin {
+    -webkit-animation-name: fadeInUpLogin;
+    -moz-animation-name: fadeInUpLogin;
+    -o-animation-name: fadeInUpLogin;
+    animation-name: fadeInUpLogin;
+}
+
+@keyframes voteBar {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.voteBar {
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -o-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    -o-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-name: voteBar;
+    -moz-animation-name: voteBar;
+    -o-animation-name: voteBar;
+    animation-name: voteBar;
+}

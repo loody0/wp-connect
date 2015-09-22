@@ -9,10 +9,6 @@
  */
 do_action( 'bp_before_directory_activity' );
 ?>
-<?php
-//global $bp; 
-//var_dump( $bp->bp_options_nav );
-?>
 <div id="buddypress">
 
     <div class="item-list-tabs activity-type-tabs connect-item-list-tabs" role="navigation">

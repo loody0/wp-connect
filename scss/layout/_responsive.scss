@@ -25,7 +25,7 @@ body.side-opened{
     .page-wrap{
         /*position: fixed;*/
         overflow-x: hidden;
-        
+
     }
 }
 .page-wrap{
@@ -60,14 +60,16 @@ body.side-opened{
 }
 .site-header{
     &.header-resp-1{
-        .navbar-user{
-            .user-name{
+        .nav-user-dropdown{
+            .username, .caret{
                 display: none;
             }
-            >.user-dropdown{
-                .dropdown-menu:after{
-                    left: auto;
-                    right: 50px;
+            img.avatar{
+                margin: 0;
+            }
+            >.dropdown-menu{
+                &:after{
+                    right: 27px;
                 }
             }
         }

@@ -55,7 +55,7 @@
                                         $connect_header_logo_url = $connect_header_logo_url[ 0 ];
                                         echo '<div class="site-logo"><img src="' . $connect_header_logo_url . '" /></div>';
                                     } else {
-                                        
+
                                         // display blogname and description
                                         $disable_tagline = connect_get_option( 'connect_disable_tagline' );
                                         ?>
@@ -94,6 +94,16 @@
                                     'walker' => new wp_bootstrap_navwalker() )
                                 );
                                 ?>
+
+                                <ul class="nav navbar-nav navbar-right navbar-nav-user">
+                                    <?php
+                                    if ( !is_user_logged_in() ) {
+                                        connect_login_register_nav();
+                                    } else {
+                                        connect_user_nav();
+                                    }
+                                    ?>
+                                </ul>
 
                             </div> <!-- .navbar-collapse -->
                         </div> <!-- .container-fluid -->

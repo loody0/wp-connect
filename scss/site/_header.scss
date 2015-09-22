@@ -88,6 +88,13 @@
             @include box-shadow(none);
             background: transparent;
         }
+        >.open{
+            >a, >a:hover, >a:focus{
+                color: $color_nav-link;
+                @include box-shadow(none);
+                background: transparent;
+            }
+        }
     }
     .site-menu{
         >li{

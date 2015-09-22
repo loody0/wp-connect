@@ -317,3 +317,5 @@ function connect_bp_notifications_bulk_management_dropdown() {
     </div>
     <?php
 }
+
+get_template_part( 'inc/buddypress/navbar-login' );

@@ -1,0 +1,75 @@
+.navbar-nav{
+    >li.nav-user-dropdown{
+        line-height: 42px;
+        >a{
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+        img.avatar{
+            width: 42px;
+            height: 42px;
+            margin: 0;
+            margin-right: 10px;
+            @include border-radius(50%);
+        }
+        >.dropdown-menu{
+            line-height: 1;
+            border-color: $color_line;
+            top: 97%;
+            width: 200px;
+            @include material-shadow(1);
+            @include border-radius(0);
+            &:after{
+                content: '\e253';                   
+                @include glyphicon();
+                position: absolute;
+                right: 50px;
+                top: -10px;
+                color: #FFF;
+                text-shadow: 0px -1px 0px rgba(0,0,0,0.24);
+            }
+            li{
+                a{
+                    display: block;
+                    color: $color_text-dark;
+                    padding: 8px 20px;
+                }
+                position: relative;
+            }
+            >li:hover > ul.dropdown-submenu{
+                display: block;
+            }
+            >li{
+                >ul.dropdown-submenu{
+                    li a{
+                        &:hover, &:focus{
+                            background-color: #EEE;
+                        }
+                    }
+                    display: none;
+                    padding: 5px 0;
+                    list-style: none;
+                    line-height: 20px;
+                    position: absolute;
+                    left: -180px;
+                    right: auto;
+                    top: 0;
+                    width: 180px;
+                    @include material-shadow(1);
+                    background-color: #fafafa;
+                    border: solid 1px $color_line;
+                    @include border-radius(4px 0 0 4px);
+                    &:before{
+                        content: '\e250';                   
+                        @include glyphicon();
+                        position: absolute;
+                        right: -10px;
+                        top: 12px;
+                        color: #fafafa;
+                        text-shadow: 1px 0px 0px rgba(0,0,0,0.24);
+                    }
+                }
+            }
+        }
+    }
+}
