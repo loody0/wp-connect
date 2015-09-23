@@ -19,7 +19,7 @@
             <div class="entry-content blog-content">
                 <?php the_excerpt(); ?>
             </div>
-            <a href="#" class="btn btn-primary connect-btn connect-btn-primary"><?php _e( 'Read More', 'connect' ); ?></a>
+            <a href="<?php echo esc_url( get_permalink() ); ?>" class="btn btn-primary connect-btn connect-btn-primary"><?php _e( 'Read More', 'connect' ); ?></a>
             <hr/>
             <div class="blog-footer clearfix">
                 <div class="blog-time pull-left"><i class="fa fa-bookmark-o"></i> &nbsp;<?php the_time(); ?></div>
