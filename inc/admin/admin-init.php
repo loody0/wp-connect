@@ -22,3 +22,5 @@ if ( file_exists( dirname( __FILE__ ) . '/redux-framework/framework.php' ) ) {
 if ( file_exists( dirname( __FILE__ ) . '/options-init.php' ) ) {
     require_once dirname( __FILE__ ) . '/options-init.php';
 }
+
+get_template_part( 'inc/admin/update' );
