@@ -59,7 +59,7 @@
     }
 }
 
-.site-navbar{
+.site-navbar, .side-left{
     .badge{
         background-color: $color_link-main;
         font-weight: 600;
@@ -69,5 +69,10 @@
     }
     .badge-empty{
         padding: 1px 5px;
+    }
+}
+.side-left{
+    .badge-border{
+        border-color: $color_side-bg;
     }
 }

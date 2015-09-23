@@ -2,12 +2,10 @@
 
     $( function() {
         $( window ).load( function() {
-            responsiveSidebarActivity();
             customScroll();
         } );
         $( window ).resize( function() {
             responsiveHeader();
-            responsiveSidebarActivity();
             responsivePostBox();
         } );
 
@@ -133,21 +131,6 @@
          * end responsive header
          */
 
-        // sidebar activity
-        function responsiveSidebarActivity() {
-            var _width = $( '.site-sidebar .sidebar-col-1' ).width();
-            $( '.site-sidebar .sidebar-activity-chat' ).width( _width );
-        }
-        // end sidebar activity
-
-        // side left top
-        $( "body" ).on( "click", ".side-left .side-left-top .side-left-top-toggle", function() {
-            var _target = $( $( this ).data( 'target' ) );
-            $( this ).parents( ".side-left-top" ).find( ".side-left-top-dropdown" ).not( _target ).slideUp( 300 );
-            _target.slideToggle( 300 );
-        } );
-        // end side left top
-
         /*
          * post box responsive
          */
@@ -199,28 +182,6 @@
             } );
         }
         // end custom scroll
-
-        // messages
-        $( "body" ).on( "click", "#messages-main .messages-list .message-item", function() {
-            $( this ).siblings( ".message-item" ).removeClass( 'active' );
-            $( this ).addClass( 'active' );
-            $( '#messages-main' ).addClass( 'open' );
-            $( '#messages-main .conversation-cont' ).addClass( 'open' );
-        } );
-        $( "body" ).on( "click", "#messages-main .conversation-cont .close-conversation", function() {
-            $( "#messages-main .messages-list .message-item" ).removeClass( 'active' );
-            $( '#messages-main' ).removeClass( 'open' );
-            $( '#messages-main .conversation-cont' ).removeClass( 'open' );
-
-        } );
-        // end messages
-
-        // chat window
-        $( "body" ).on( "click", ".chat-window .chat-window-header", function() {
-            $( this ).parent( '.chat-window' ).toggleClass( 'min' );
-            $( this ).parent( '.chat-window' ).toggleClass( 'open' );
-        } );
-        // end chat window
 
         $( window ).resize();
 
@@ -309,6 +270,13 @@
                     } );
         }
 
+
+    } );
+
+    $( function() {
+        /*
+         * sticky sidebar
+         */
         if ( $( "#site-content" ).height() > $( "#site-sidebar" ).height() ) {
             $( "#site-sidebar" ).stick_in_parent( {
                 parent: "#site-main",
@@ -321,6 +289,21 @@
             };
         } )( this ) );
 
+    } );
+
+    $( function() {
+        /*
+         * side menu user
+         */
+        $( 'body' ).on( "click", ".side-left-user .nav-user-dropdown.open li.has-submenu", function( ev ) {
+            if ( 'has-submenu' === ev.srcElement.className ) {
+                
+                $( this ).parent().children('.has-submenu').not(this).children( '.dropdown-submenu' ).hide( 0 );
+                $( this ).children( '.dropdown-submenu' ).toggle( 0 );
+
+                return false;
+            }
+        } );
     } );
 
 }( jQuery ) );

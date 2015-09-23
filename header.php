@@ -34,13 +34,26 @@
         <div class="site-page">
             <?php get_template_part( 'template-parts/side-menu' ); ?>
             <?php get_template_part( 'template-parts/side-left' ); ?>
+            <?php get_template_part( 'template-parts/side-right' ); ?>
             <div class="page-wrap">
                 <div class="page-overlay"></div>
 
                 <header class="site-header" id="site-header">
                     <nav class="navbar navbar-default site-navbar navbar-fixed-top" id="site-navbar">
-                        <span class="side-left-bar pull-left" id="side-left-bar"><i class="fa fa-bars"></i></span>
-                        <span class="side-right-bar pull-right" id="side-right-bar"><span class="badge-wrap"><i class="fa fa-comments"></i><span class="badge badge-border">5</span></span></span>
+                        <?php
+                        $left_bar = '<i class="fa fa-bars"></i>';
+                        if ( is_user_logged_in() ) {
+                            $my_avatar = bp_core_fetch_avatar( array ( 'item_id' => bp_loggedin_user_id(), 'type' => 'thumb', 'width' => '30', 'height' => '30' ) );
+                            $count_notif = bp_notifications_get_unread_notification_count( bp_loggedin_user_id() );
+                            $count_messages = bp_get_total_unread_messages_count();
+                            $count_total = $count_notif + $count_messages;
+                            $badge = ($count_total > 0) ? '<span class="badge badge-border badge-empty">&nbsp;</span>' : '';
+                            $left_bar = '<span class="badge-wrap badge-wrap-inline">' . $my_avatar . $badge . '</span>';
+                        }
+                        ?>
+                        <span class="side-left-bar pull-left" id="side-left-bar"><?php echo $left_bar; ?></span>
+
+                        <span class="side-right-bar pull-right" id="side-right-bar"><i class="fa fa-bars"></i></span>
                         <div class="container-fluid">
 
 
@@ -84,7 +97,7 @@
                                 <p class="navbar-text site-menu-bar"><span class="navbar-link" id="site-menu-bar"><i class="fa fa-bars"></i></span></p>
 
                                 <?php
-                                wp_nav_menu( array(
+                                wp_nav_menu( array (
                                     'menu' => 'primary',
                                     'theme_location' => 'primary',
                                     'depth' => 1,

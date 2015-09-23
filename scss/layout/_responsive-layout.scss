@@ -23,9 +23,7 @@
 body.side-opened{
     overflow-x: hidden;
     .page-wrap{
-        /*position: fixed;*/
         overflow-x: hidden;
-
     }
 }
 .page-wrap{
@@ -86,7 +84,6 @@ body.side-opened{
 
 .side-menu-wrap{
     position: fixed;
-    background-color: $color_side-bg;
     top: 0;
     bottom: 0;
     left: -300px;
@@ -94,40 +91,11 @@ body.side-opened{
     max-width: 70%;
     height: 100%;
     height: 100vh;
-    border-right: solid 1px $color_line;
-    border-bottom: solid 1px $color_line;
     padding: 20px;
     overflow-y: auto;
     @include transition(all 0.3s);
     &.open{
         left: 0;
-    }
-}
-.side-menu-wrap, .side-left{
-    ul.side-menu{
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        margin-left: -20px;
-        margin-right: -20px;
-        margin-bottom: 15px;
-        >li{
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-            >a{
-                display: block;
-                padding: 10px 20px;
-                color: #DDD;
-                color: rgba(255,255,255,0.7);
-                &:hover, &:active, &:focus{
-                    background-color: rgba(0,0,0,0.2);
-                }
-            }
-            &.active{
-                >a{
-
-                }
-            }
-        }
     }
 }
 
@@ -176,37 +144,43 @@ body.side-opened{
         @media(max-width: 767px){
             display: inline;
         }
-        .badge{
-            padding: 2px 4px;
-            top: -4px;
-            right: -8px;
-        }
+    }
+    .side-left-bar img.avatar{
+        @include border-radius(50%);
     }
 }
 
-.side-left{
+.side-left, .side-right{
+    @media(min-width: 768px){
+        display: none;
+    }
     position: fixed;
-    background-color: $color_side-bg;
     top: 0;
     bottom: 0;
-    color: #FFF;
+    width: 70%;
+    @media(min-width: 420px){
+        width: 300px;
+    }
+    @include transition(all 0.3s);
     height: 100vh;
-    border-right: solid 1px $color_line;
-    border-bottom: solid 1px $color_line;
     overflow-y: auto;
     overflow-x: hidden;
-    @include transition(all 0.3s);
-    width: 70%;
+}
+.side-left{
     left: -70%;
     @media(min-width: 420px){
         left: -300px;
-        width: 300px;
     }
     &.open{
         left: 0;
     }
-    ul.side-menu{
-        margin-left: 0;
-        margin-right: 0;
+}
+.side-right{
+    right: -70%;
+    @media(min-width: 420px){
+        right: -300px;
+    }
+    &.open{
+        right: 0;
     }
 }
