@@ -22,13 +22,13 @@ function connect_login_register_nav() {
  */
 function connect_user_nav() {
 
-    if ( !is_user_logged_in() ) return;
+    if ( !connect_is_buddypress_active() || !is_user_logged_in() ) return;
 
     $my_avatar = bp_core_fetch_avatar( array ( 'item_id' => bp_loggedin_user_id(), 'type' => 'thumb' ) );
     $my_name = bp_core_get_username( bp_loggedin_user_id() );
 
-    $count_notif = bp_notifications_get_unread_notification_count( bp_loggedin_user_id() );
-    $count_messages = bp_get_total_unread_messages_count();
+    $count_notif = ( bp_is_active( 'notifications' ) ) ? bp_notifications_get_unread_notification_count( bp_loggedin_user_id() ) : 0;
+    $count_messages = ( bp_is_active( 'messages' ) ) ? bp_get_total_unread_messages_count() : 0;
     $count_total = $count_notif + $count_messages;
 
     $badge = ($count_total > 0) ? '<span class="badge badge-border badge-empty">&nbsp;</span>' : '';
@@ -77,6 +77,7 @@ function connect_user_nav() {
  * @return array
  */
 function connect_get_user_options_nav() {
+    if ( !connect_is_buddypress_active() ) return;
     global $bp;
     $nav = $bp->bp_options_nav;
 

@@ -27,7 +27,6 @@
     </head>
 
     <body <?php body_class(); ?>>
-
         <div class="page-progress-bar"></div>
         <div class="page-progress-overlay"></div>
 
@@ -42,10 +41,10 @@
                     <nav class="navbar navbar-default site-navbar navbar-fixed-top" id="site-navbar">
                         <?php
                         $left_bar = '<i class="fa fa-bars"></i>';
-                        if ( is_user_logged_in() ) {
+                        if ( connect_is_buddypress_active() && is_user_logged_in() ) {
                             $my_avatar = bp_core_fetch_avatar( array ( 'item_id' => bp_loggedin_user_id(), 'type' => 'thumb', 'width' => '30', 'height' => '30' ) );
-                            $count_notif = bp_notifications_get_unread_notification_count( bp_loggedin_user_id() );
-                            $count_messages = bp_get_total_unread_messages_count();
+                            $count_notif = ( bp_is_active( 'notifications' ) ) ? bp_notifications_get_unread_notification_count( bp_loggedin_user_id() ) : 0;
+                            $count_messages = ( bp_is_active( 'messages' ) ) ? bp_get_total_unread_messages_count() : 0;
                             $count_total = $count_notif + $count_messages;
                             $badge = ($count_total > 0) ? '<span class="badge badge-border badge-empty">&nbsp;</span>' : '';
                             $left_bar = '<span class="badge-wrap badge-wrap-inline">' . $my_avatar . $badge . '</span>';
@@ -110,7 +109,7 @@
 
                                 <ul class="nav navbar-nav navbar-right navbar-nav-user">
                                     <?php
-                                    if ( !is_user_logged_in() ) {
+                                    if ( connect_is_buddypress_active() && !is_user_logged_in() ) {
                                         connect_login_register_nav();
                                     } else {
                                         connect_user_nav();

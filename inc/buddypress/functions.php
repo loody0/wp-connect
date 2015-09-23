@@ -235,7 +235,7 @@ function connect_bp_xprofile_field_edit_html_elements( $r, $class ) {
 //    'selectbox' => 'BP_XProfile_Field_Type_Selectbox',
 //    'textarea' => 'BP_XProfile_Field_Type_Textarea',
 //    'textbox' => 'BP_XProfile_Field_Type_Textbox',
-    $fields = array(
+    $fields = array (
         'BP_XProfile_Field_Type_Textbox',
         'BP_XProfile_Field_Type_Textarea',
         'BP_XProfile_Field_Type_Number',
@@ -247,7 +247,7 @@ function connect_bp_xprofile_field_edit_html_elements( $r, $class ) {
         return $r;
     }
 
-    $fields = array(
+    $fields = array (
         'BP_XProfile_Field_Type_Selectbox',
         'BP_XProfile_Field_Type_Datebox'
     );
@@ -268,7 +268,7 @@ add_filter( 'bp_xprofile_field_edit_html_elements', 'connect_bp_xprofile_field_e
 function connect_bp_notifications_sort_order_form() {
 
     // Setup local variables
-    $orders = array( 'DESC', 'ASC' );
+    $orders = array ( 'DESC', 'ASC' );
     $selected = 'DESC';
 
     // Check for a custom sort_order
@@ -316,6 +316,20 @@ function connect_bp_notifications_bulk_management_dropdown() {
         <input type="submit" id="notification-bulk-manage" class="button action btn btn-default connect-btn connect-btn-default" value="<?php esc_attr_e( 'Apply', 'buddypress' ); ?>">
     </div>
     <?php
+}
+
+
+// include plugin.php on front end
+if ( !is_admin() ) {
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+}
+/**
+ * check is buddypress active
+ * 
+ * @return boolean
+ */
+function connect_is_buddypress_active() {
+    return is_plugin_active( 'buddypress/bp-loader.php' );
 }
 
 get_template_part( 'inc/buddypress/navbar-login' );
