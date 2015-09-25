@@ -503,21 +503,21 @@
   margin-bottom: 0;
 }
 
-#buddypress .profile .form-group label {
+#buddypress .profile .form-group label, #buddypress .profile .editfield label, #buddypress #register-page .form-group label, #buddypress #register-page .editfield label {
   display: block;
 }
-#buddypress .profile .form-group .field-inline-block {
+#buddypress .profile .form-group .field-inline-block, #buddypress .profile .editfield .field-inline-block, #buddypress #register-page .form-group .field-inline-block, #buddypress #register-page .editfield .field-inline-block {
   display: inline-block;
   width: auto;
   max-width: 100%;
 }
-#buddypress .profile .form-group .checkbox {
+#buddypress .profile .form-group .checkbox, #buddypress .profile .editfield .checkbox, #buddypress #register-page .form-group .checkbox, #buddypress #register-page .editfield .checkbox {
   margin: 0;
 }
-#buddypress .profile .form-group .checkbox label {
+#buddypress .profile .form-group .checkbox label, #buddypress .profile .editfield .checkbox label, #buddypress #register-page .form-group .checkbox label, #buddypress #register-page .editfield .checkbox label {
   margin: 5px 0;
 }
-#buddypress .profile .form-group .checkbox label:first-child {
+#buddypress .profile .form-group .checkbox label:first-child, #buddypress .profile .editfield .checkbox label:first-child, #buddypress #register-page .form-group .checkbox label:first-child, #buddypress #register-page .editfield .checkbox label:first-child {
   max-width: 100%;
   margin-top: 0;
   margin-bottom: 5px;
@@ -526,13 +526,13 @@
   cursor: default;
   display: block;
 }
-#buddypress .profile .form-group .radio {
+#buddypress .profile .form-group .radio, #buddypress .profile .editfield .radio, #buddypress #register-page .form-group .radio, #buddypress #register-page .editfield .radio {
   margin: 0;
 }
-#buddypress .profile .form-group .radio label {
+#buddypress .profile .form-group .radio label, #buddypress .profile .editfield .radio label, #buddypress #register-page .form-group .radio label, #buddypress #register-page .editfield .radio label {
   margin: 5px 0;
 }
-#buddypress .profile .form-group .radio > label {
+#buddypress .profile .form-group .radio > label, #buddypress .profile .editfield .radio > label, #buddypress #register-page .form-group .radio > label, #buddypress #register-page .editfield .radio > label {
   max-width: 100%;
   margin-top: 0;
   margin-bottom: 5px;
@@ -541,24 +541,24 @@
   cursor: default;
   display: block;
 }
-#buddypress .profile .form-group .clear-value {
+#buddypress .profile .form-group .clear-value, #buddypress .profile .editfield .clear-value, #buddypress #register-page .form-group .clear-value, #buddypress #register-page .editfield .clear-value {
   font-size: 12px;
 }
-#buddypress .profile .form-group .field-visibility-settings-toggle, #buddypress .profile .form-group .field-visibility-settings-notoggle {
+#buddypress .profile .form-group .field-visibility-settings-toggle, #buddypress .profile .form-group .field-visibility-settings-notoggle, #buddypress .profile .editfield .field-visibility-settings-toggle, #buddypress .profile .editfield .field-visibility-settings-notoggle, #buddypress #register-page .form-group .field-visibility-settings-toggle, #buddypress #register-page .form-group .field-visibility-settings-notoggle, #buddypress #register-page .editfield .field-visibility-settings-toggle, #buddypress #register-page .editfield .field-visibility-settings-notoggle {
   margin-top: 3px;
   margin-bottom: 5px;
   font-size: 13px;
   font-style: italic;
 }
-#buddypress .profile .form-group p.description {
+#buddypress .profile .form-group p.description, #buddypress .profile .editfield p.description, #buddypress #register-page .form-group p.description, #buddypress #register-page .editfield p.description {
   font-size: 12px;
 }
-#buddypress .profile .form-group .field-visibility-settings {
+#buddypress .profile .form-group .field-visibility-settings, #buddypress .profile .editfield .field-visibility-settings, #buddypress #register-page .form-group .field-visibility-settings, #buddypress #register-page .editfield .field-visibility-settings {
   display: none;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-#buddypress .profile .form-group .field-visibility-settings fieldset legend {
+#buddypress .profile .form-group .field-visibility-settings fieldset legend, #buddypress .profile .editfield .field-visibility-settings fieldset legend, #buddypress #register-page .form-group .field-visibility-settings fieldset legend, #buddypress #register-page .editfield .field-visibility-settings fieldset legend {
   display: inline-block;
   width: auto;
   color: #66757f;
@@ -567,17 +567,17 @@
   padding: 0 10px;
   margin-bottom: 0;
 }
-#buddypress .profile .form-group .field-visibility-settings fieldset ul {
+#buddypress .profile .form-group .field-visibility-settings fieldset ul, #buddypress .profile .editfield .field-visibility-settings fieldset ul, #buddypress #register-page .form-group .field-visibility-settings fieldset ul, #buddypress #register-page .editfield .field-visibility-settings fieldset ul {
   margin: 0;
   padding: 0;
   padding-left: 20px;
   list-style: none;
   font-size: 13px;
 }
-#buddypress .profile .form-group .field-visibility-settings .field-visibility-settings-close {
+#buddypress .profile .form-group .field-visibility-settings .field-visibility-settings-close, #buddypress .profile .editfield .field-visibility-settings .field-visibility-settings-close, #buddypress #register-page .form-group .field-visibility-settings .field-visibility-settings-close, #buddypress #register-page .editfield .field-visibility-settings .field-visibility-settings-close {
   font-size: 12px;
 }
-#buddypress .profile .submit {
+#buddypress .profile .submit, #buddypress #register-page .submit {
   margin-top: 25px;
 }
 

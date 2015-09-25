@@ -38,8 +38,8 @@
 }
 
 #buddypress{
-    .profile{
-        .form-group{
+    .profile, #register-page{
+        .form-group, .editfield{
             label{
                 display: block;
             }

@@ -48,7 +48,7 @@
             </form>
         </div>
         <div class="panel-footer">
-            Don’t have an account? <a href="#">Sign Up</a>
+            Don’t have an account? <a href="<?php echo wp_registration_url(); ?>">Sign Up</a>
         </div>
     </div>
 </div>

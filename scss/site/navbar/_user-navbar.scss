@@ -75,3 +75,36 @@
         }
     }
 }
+
+.navbar-nav{
+    >li.dropdown-custom{
+        >.dropdown-menu{
+            line-height: 1;
+            border-color: $color_line;
+            top: 97%;
+            right: -20px;
+            width: 300px;
+            @include material-shadow(1);
+            @include border-radius(0);
+            &:after{
+                content: '\e253';                   
+                @include glyphicon();
+                position: absolute;
+                right: 50px;
+                top: -10px;
+                color: #FFF;
+                text-shadow: 0px -1px 0px rgba(0,0,0,0.24);
+            }
+        }
+    }
+}
+.login-nav{
+    .panel-login{
+        @include border-radius(0);
+        
+        border: none;
+        .panel-body{
+            padding: 25px 20px;
+        }
+    }
+}

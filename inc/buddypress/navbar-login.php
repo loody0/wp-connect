@@ -8,11 +8,14 @@
  */
 function connect_login_register_nav() {
     ?>
-    <li>
-        <a href="#">Sign in</a>
+    <li class="dropdown dropdown-custom">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign in</a>
+        <ul class="dropdown-menu animated fadeInRight" style="margin: 0; padding: 0;">
+            <li><?php get_template_part( 'template-parts/form-login-nav' ); ?></li>
+        </ul>
     </li>
     <li>
-        <a href="#">Create an Account</a>
+        <a href="<?php echo wp_registration_url(); ?>">Create an Account</a>
     </li>
     <?php
 }
@@ -111,7 +114,7 @@ function connect_get_user_options_nav() {
         );
         array_push( $menu, $topmenu );
     }
-    $logout = array(
+    $logout = array (
         'name' => 'Logout',
         'link' => wp_logout_url(),
         'submenu' => '',

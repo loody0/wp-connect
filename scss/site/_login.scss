@@ -60,3 +60,31 @@
         outline-style: auto;
     }
 }
+
+#register-page{
+    .register-section{
+        margin-bottom: 30px;
+        h4{
+            font-weight: 600;
+            border-bottom: 1px solid $color_line;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .form-group, .editfield {
+            margin-bottom: 15px;
+            .error{
+                font-style: italic;
+                font-size: small;
+                color: #a94442;
+            }
+        }
+        .edit-field{
+            .field-visibility-settings-notoggle, .field-visibility-settings-toggle{
+            
+            }
+        }
+
+        
+    }
+    
+}
