@@ -309,10 +309,10 @@ th {
 }
 
 .wow-animated, .animated {
-  -webkit-animation-duration: 0.4s;
-  -moz-animation-duration: 0.4s;
-  -o-animation-duration: 0.4s;
-  animation-duration: 0.4s;
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
   -o-animation-fill-mode: both;
@@ -1513,7 +1513,7 @@ a img.aligncenter {
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
   right: -10px;
-  top: 12px;
+  top: 10px;
   color: #fafafa;
   text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.24);
 }
@@ -1709,6 +1709,85 @@ a img.aligncenter {
 
 .side-right {
   padding: 15px;
+}
+
+.login-page {
+  padding: 50px 0;
+}
+.login-page .site-logo {
+  margin-bottom: 30px;
+}
+.login-page .site-logo img {
+  width: 150px;
+  height: auto;
+}
+.login-page .site-title {
+  font-size: 58px;
+  font-weight: 600;
+  line-height: 58px;
+}
+.login-page .site-description {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+.login-page p {
+  line-height: 24px;
+}
+.login-page .login-page-right .login-top {
+  text-align: center;
+}
+
+.panel-login {
+  border-color: #d8dcde;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  width: 350px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+.panel-login .panel-body {
+  padding: 30px;
+}
+.panel-login .panel-footer {
+  text-align: center;
+  border-color: #e8e9e9;
+  background-color: #f8f9f9;
+  -webkit-border-radius: 0 0 10px 10px;
+  -moz-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+  padding: 15px 0;
+  color: #4f6070;
+}
+.panel-login .alert {
+  font-size: 13px;
+}
+
+.form-group-lg .input-login {
+  font-size: 14px;
+}
+
+.input-login {
+  border-color: #d8dcde;
+  font-size: 14px;
+}
+.input-login::-webkit-input-placeholder {
+  color: #97a1aa;
+}
+.input-login:-moz-placeholder {
+  /* Firefox 18- */
+  color: #97a1aa;
+}
+.input-login::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #97a1aa;
+}
+.input-login:-ms-input-placeholder {
+  color: #97a1aa;
+}
+.input-login:focus {
+  outline-style: auto;
 }
 
 @media (min-width: 1560px) {

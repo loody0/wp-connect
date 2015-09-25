@@ -111,5 +111,12 @@ function connect_get_user_options_nav() {
         );
         array_push( $menu, $topmenu );
     }
+    $logout = array(
+        'name' => 'Logout',
+        'link' => wp_logout_url(),
+        'submenu' => '',
+        'count' => ''
+    );
+    array_push( $menu, $logout );
     return $menu;
 }
