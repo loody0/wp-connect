@@ -126,7 +126,7 @@
                         color: $color_side-text;
                         padding: 10px 20px;
                         &:hover,&:focus{
-                            background-color: rgba(0,0,0,0.2);
+                            background-color: rgba(255,255,255,0.3);
                         }
                     }
                     &.has-submenu{
@@ -161,8 +161,9 @@
                             border-top: 1px solid rgba(255,255,255,0.05);
                             padding-left: 10px;
                             a{
+                                color: #DDD;
                                 &:hover, &:focus{
-                                    background-color: rgba(0,0,0,0.1);
+                                    background-color: rgba(255,255,255,0.3);
                                 }
                             }
                         }
