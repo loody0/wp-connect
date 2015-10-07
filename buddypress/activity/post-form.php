@@ -24,7 +24,7 @@
 
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active"><a href="#postnews" aria-controls="news" role="tab" data-toggle="tab">News</a></li>
-                
+                <?php do_action( 'bp_activity_post_form_nav' );//to enable plugins to inject links to other activity types?>
                 <li role="presentation" class="dropdown more">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         <span class="glyphicon glyphicon-option-horizontal"></span>
@@ -53,6 +53,7 @@
 
                     </div>
                 </div>
+                <?php do_action( 'bp_activity_post_form_tabs_' );//to enable plugins to inject other activity type forms?>
 
             </div>
 
